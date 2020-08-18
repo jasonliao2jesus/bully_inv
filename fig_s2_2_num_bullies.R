@@ -1,5 +1,5 @@
 #q3_a_bully下方會用到
-ggplot(data=dataset, aes(fill=bully_3group, x=q3_a))+ geom_bar(position="dodge")
+#ggplot(data=dataset, aes(fill=bully_3group, x=q3_a))+ geom_bar(position="dodge")
 
 a <- as.data.frame.table(table(dataset$bully_3group, dataset$q3_a))
 a<-plyr::rename(a, replace= c("Var1"= "bully_3group", "Var2"= "q3_a","Freq"="count"))
@@ -73,10 +73,10 @@ a[5,6]<- a_bis #+
 #)
 
 
-figure_s2_2 <- a +labs(  tag = "Figure S2.2", 
+fig_s2_2 <- a +labs(  tag = "Figure S2.2", 
                          title= "The Correlation Matrix of Bully perpetration and the Numeric Variables",  
                          fill="Frequency of Bully Perpetration")
-figure_s2_2
+
 
 ggsave(plot = figure_s2_2, filename ="figure_s2_2.png", 
        #width = 15, height = 15, units = "cm",

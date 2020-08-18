@@ -141,7 +141,7 @@ victim_3group <-  ggplot(data=dataset, aes(x=victim_3group))+
 a_bis <-  ggboxplot(data=dataset_selected, 
                     "bully_3group", "bis1_total", fill="bully_3group_rev", facet.by = c("victim_3group"), #fill="bully_3group_rev",
                     xlab = "Bullying Perpetration", ylab = "Barret Impulsiveness Scale",
-                    panel.labs = list(victim_3group=c("Never being victimized","1-2 Times", "Frequent")),
+                    panel.labs = list(victim_3group=c("Victimization: Never","Victimization: 1-2 Times", "Victimization: Frequent")),
                     outlier.size=0.8
                     
                     
@@ -177,14 +177,14 @@ fig_1_b <-  a_bis +
 fig_1_b <- fig_1_b+rremove("legend")
 
 
-fig_1 <-  ggarrange(
-  bully_inv_more,fig_k, victim_3group,fig_1_b,
+fig_1<-  ggarrange(
+  bully_inv_more, victim_3group,fig_k, fig_1_b,
   labels = c(
     "A", "B","C","D"
   ),label.y = 1.05, legend = "right", common.legend = T, nrow = 4
 )
 
-annotate_figure(
+fig_1_revised <- annotate_figure(
   fig_1, top = text_grob("Sample Characteristics: Bullying Victimization/ Impulsiveness v.s Frequency of Bullying Perpetration ", 
                          face = "plain", size = 12, hjust=0.45, vjust = 0.27
   ),

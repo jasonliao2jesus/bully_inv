@@ -41,7 +41,7 @@ model_2_rec <- glm(formula = rec_bully_firstyr ~ victim_3group+q3_a +  AUDIT_C_4
 model_1_rec <- glm(formula = rec_bully_firstyr ~ 1, 
                    family = binomial(), data =  dataset)
 
-
+dataset$sec
 
 vif_model_2_rec <- vif(model_2_rec)
 

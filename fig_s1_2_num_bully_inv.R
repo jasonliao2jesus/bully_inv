@@ -1,5 +1,5 @@
 #q3_a_bully_inv·|¥Î¨ì
-ggplot(data=dataset, aes(fill=bully_inv, x=q3_a))+ geom_bar(position="dodge")
+#ggplot(data=dataset, aes(fill=bully_inv, x=q3_a))+ geom_bar(position="dodge")
 
 a <- as.data.frame.table(table(dataset$bully_inv, dataset$q3_a))
 a<-plyr::rename(a, replace= c("Var1"= "bully_inv", "Var2"= "q3_a","Freq"="count"))
@@ -67,11 +67,11 @@ a[5,6]<- a_bis #+
                #             )
 
 
-figure_s1_2<- a +labs( tag = "Figure S2.1", 
+fig_s1_2<- a +labs( tag = "Figure S2.1", 
         title= "The Correlation Matrix of Bullying Involvement, Smoking and the Numeric Variables", 
         fill="Types of Bullying Involvement")
-figure_s1_2
 
+ 
 
 
  

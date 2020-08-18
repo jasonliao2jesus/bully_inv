@@ -6,20 +6,48 @@ source("var_univar_analyses.R")
 creat_adj_OR_df <- function(ind_var=vars_vector, 
                             dep_var="firstyrbully2", 
                             data=dataset_table2,
-                            p.threshhold=0.05,
-                            must.have.var=c("firstrses_standardized"))
+                            p.threshhold=0.05, span=1, group=12, 
+                            plot=F,
+                            validate.boot40 = validate.boot40,
+                            val.B= 40,
+                            cut.off=0.5,
+                            #boot.cal.plot= F,
+                            confusion.matrix = T
+                           # must.have.var=c("firstrses_standardized")
+                            )
   {
   
   var_df_firsryrbully <- var_univar_analyses(ind_var, dep_var, data_frame = data)
   
   sig_df <-  var_df_firsryrbully%>%filter(p_value<p.threshhold)
   sig_var <- sig_df$Var
-  sig_var_str <- paste(c("q3_a",as.character(sig_var),must.have.var #"firstrses_standardized"
+
+ 
+  
+  
+  sig_var_str <- paste(c("q3_a",as.character(sig_var)
+                         #,must.have.var #"firstrses_standardized"
                          ), collapse = "+ ")
   sig_fmla <- as.formula( paste(dep_var,"~",sig_var_str))
   
-  glm_model <-  glm(sig_fmla, family = binomial(), method =  "brglmFit", data = data)
+  glm_model <-  glm(sig_fmla, family = binomial(),   method =  "brglmFit",
+                    data = data)
+  if(plot)
+  {
+  plot.model.glm <<- plot_calibration(data1=data, model=glm_model , 
+                                      groups=group, correct=T,span=span, svm.mod=F,
+                                      confusion.matrix = confusion.matrix, 
+                                      cut.off = cut.off,
+                                      validate.boot40=validate.boot40, val.B=val.B , #, machine=c("lrm","glm")
+                      plottitle= "Calibration Plot: Model 1") 
+  }
+  
+  
+ 
+  
   model_summary <-  summary(glm_model)
+  
+  
   
   a <- exp(coef(glm_model))
   b <- exp(confint(glm_model))
@@ -48,27 +76,4 @@ creat_adj_OR_df <- function(ind_var=vars_vector,
   return(a)
   
   
-}
-
-creat_adj_model <- function(ind_var=vars_vector, 
-                            dep_var="firstyrbully2", 
-                            data=dataset_table2,
-                            p.threshhold=0.05,
-                            must.have.var=c("q3_a", "firstrses_standardized"))
-{
-  
-  var_df_firsryrbully <- var_univar_analyses(ind_var, dep_var, data_frame = data)
-  
-  sig_df <-  var_df_firsryrbully%>%filter(p_value<p.threshhold)
-  sig_var <- sig_df$Var
-  sig_var_str <- paste(c(as.character(sig_var),must.have.var #"firstrses_standardized"
-  ), collapse = "+ ")
-  sig_fmla <- as.formula( paste(dep_var,"~",sig_var_str))
-  
-  glm_model <-  glm(sig_fmla, family = binomial(), method =  "brglmFit", data = data)
- # model_summary <-  summary(glm_model)
-
-
-
-
 }

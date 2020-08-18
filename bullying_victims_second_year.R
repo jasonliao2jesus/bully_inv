@@ -3,6 +3,8 @@
 dataset_sec_yr<- dataset
 ##切點: 一個月二到三次
 #victim
+dataset_sec_yr<- mutate( dataset_sec_yr, q116_3_b_factor3=fct_collapse (q116_3_b,  no = c("無","只有一到二次"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次")) )
+
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_4_b_factor3=fct_collapse (q116_4_b,  no = c("無","只有一到二次"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_5_b_factor3=fct_collapse (q116_5_b,  no = c("無","只有一到二次"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_6_b_factor3=fct_collapse (q116_6_b,  no = c("無","只有一到二次"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次")) )
@@ -26,10 +28,13 @@ dataset_sec_yr<- mutate( dataset_sec_yr, q116_29_b_factor3=fct_collapse(q116_29_
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_28_b_factor3=fct_collapse(q116_28_b, no = c("無","只有一到二次"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_27_b_factor3=fct_collapse(q116_27_b, no = c("無","只有一到二次"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_26_b_factor3=fct_collapse(q116_26_b, no = c("無","只有一到二次"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次"))) 
+dataset_sec_yr<- mutate( dataset_sec_yr, q116_25_b_factor3=fct_collapse(q116_25_b, no = c("過去六個月來我在校未霸凌其也學生","只有一到二次"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次"))) 
 
 
 ## 切點: 約一星期一次
 # vicim
+dataset_sec_yr<- mutate( dataset_sec_yr, q116_3_b_factor4=fct_collapse(q116_3_b, no = c("無","只有一到二次","一個月二到三次"), yes = c("約一個星期一次","一個星期好幾次")) )
+
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_4_b_factor4=fct_collapse(q116_4_b, no = c("無","只有一到二次","一個月二到三次"), yes = c("約一個星期一次","一個星期好幾次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_5_b_factor4=fct_collapse(q116_5_b, no = c("無","只有一到二次","一個月二到三次"), yes = c("約一個星期一次","一個星期好幾次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_6_b_factor4=fct_collapse(q116_6_b, no = c("無","只有一到二次","一個月二到三次"), yes = c("約一個星期一次","一個星期好幾次")) )
@@ -55,11 +60,14 @@ dataset_sec_yr<- mutate( dataset_sec_yr, q116_29_b_factor4=fct_collapse(q116_29_
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_28_b_factor4=fct_collapse(q116_28_b, no = c("無","只有一到二次","一個月二到三次"), yes = c("約一個星期一次","一個星期好幾次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_27_b_factor4=fct_collapse(q116_27_b, no = c("無","只有一到二次","一個月二到三次"), yes = c("約一個星期一次","一個星期好幾次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_26_b_factor4=fct_collapse(q116_26_b, no = c("無","只有一到二次","一個月二到三次"), yes = c("約一個星期一次","一個星期好幾次"))) 
+dataset_sec_yr<- mutate( dataset_sec_yr, q116_25_b_factor4=fct_collapse(q116_25_b, no = c("過去六個月來我在校未霸凌其也學生","只有一到二次","一個月二到三次"), yes = c("約一個星期一次","一個星期好幾次"))) 
 
 
 ## 切點 只有一到二次
 
 # vicim
+dataset_sec_yr<- mutate( dataset_sec_yr, q116_3_b_factor1=fct_collapse(q116_3_b, no = c("無"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次","只有一到二次")) )
+
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_4_b_factor1=fct_collapse(q116_4_b, no = c("無"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次","只有一到二次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_5_b_factor1=fct_collapse(q116_5_b, no = c("無"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次","只有一到二次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_6_b_factor1=fct_collapse(q116_6_b, no = c("無"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次","只有一到二次")) )
@@ -85,6 +93,8 @@ dataset_sec_yr<- mutate( dataset_sec_yr, q116_29_b_factor1=fct_collapse(q116_29_
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_28_b_factor1=fct_collapse(q116_28_b, no = c("無"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次","只有一到二次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_27_b_factor1=fct_collapse(q116_27_b, no = c("無"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次","只有一到二次")) )
 dataset_sec_yr<- mutate( dataset_sec_yr, q116_26_b_factor1=fct_collapse(q116_26_b, no = c("無"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次","只有一到二次"))) 
+dataset_sec_yr<- mutate( dataset_sec_yr, q116_25_b_factor1=fct_collapse(q116_25_b, no = c("過去六個月來我在校未霸凌其也學生"), yes = c("約一個星期一次","一個星期好幾次","一個月二到三次","只有一到二次"))) 
+
 
 
 
@@ -97,13 +107,18 @@ dataset_sec_yr<- mutate( dataset_sec_yr, q116_26_b_factor1=fct_collapse(q116_26_
 dataset_sec_yr<- mutate( dataset_sec_yr, physicalbully_sec=ifelse(q116_28_b=="無", "無", "有"))
 dataset_sec_yr$physicalbully_sec <-factor(dataset_sec_yr$physicalbully_sec, levels=c("無","有") )
 
-dataset_sec_yr<- mutate( dataset_sec_yr, verbalbully_sec=ifelse(q116_26_b=="無"&q116_32_b=="無" & q116_33_b=="無", "無", "有"))
+dataset_sec_yr<- mutate( dataset_sec_yr, verbalbully_sec=ifelse(q116_26_b=="無"
+                                                                #&q116_32_b=="無" & q116_33_b=="無"
+                                                                , "無", "有"))
 dataset_sec_yr$verbalbully_sec <-factor(dataset_sec_yr$verbalbully_sec, levels=c("無","有") )
 
 dataset_sec_yr<- mutate( dataset_sec_yr, relationalbully_sec=ifelse(q116_27_b=="無"&q116_29_b=="無", "無", "有"))
 dataset_sec_yr$relationalbully_sec <-factor(dataset_sec_yr$relationalbully_sec, levels=c("無","有") )
 
-dataset_sec_yr<- mutate( dataset_sec_yr, otherbully_sec=ifelse(q116_30_b=="無"&q116_30_b=="無", "無", "有"))
+dataset_sec_yr<- mutate( dataset_sec_yr, 
+                         otherbully_sec=
+                           ifelse(q116_30_b=="無"&q116_31_b=="無"  #&q116_32_b=="無"&q116_33_b=="無"
+                                  , "無", "有"))
 dataset_sec_yr$otherbully_sec <-factor(dataset_sec_yr$otherbully_sec, levels=c("無","有") )
   # active vs passive
 
@@ -112,14 +127,16 @@ dataset_sec_yr$otherbully_sec <-factor(dataset_sec_yr$otherbully_sec, levels=c("
 dataset_sec_yr<- mutate( dataset_sec_yr, physicalvictim_sec=ifelse(q116_6_b=="無", "無", "有"))
 dataset_sec_yr$physicalvictim_sec <-factor(dataset_sec_yr$physicalvictim_sec, levels=c("無","有") )
 
-dataset_sec_yr<- mutate( dataset_sec_yr, verbalvictim_sec=ifelse(q116_4_b=="無"&q116_10_b=="無"&q116_11_b=="無", "無", "有"))
+dataset_sec_yr<- mutate( dataset_sec_yr, verbalvictim_sec=ifelse(q116_4_b=="無"#&q116_10_b=="無"&q116_11_b=="無"
+                                                                 , "無", "有"
+                                                                 ))
 dataset_sec_yr$verbalvictim_sec <-factor(dataset_sec_yr$verbalvictim_sec, levels=c("無","有") )
 
 dataset_sec_yr<- mutate( dataset_sec_yr, relationalvictim_sec=ifelse(q116_7_b=="無"&q116_5_b=="無", "無", "有"))
 dataset_sec_yr$relationalvictim_sec <-factor(dataset_sec_yr$relationalvictim_sec, levels=c("無","有") )
 
-dataset_sec_yr<- mutate( dataset_sec_yr, otherbully_sec=ifelse(q116_8_b=="無"& q116_9_b=="無"& q116_12_b=="無"&q116_14_b=="無", "無", "有"))
-dataset_sec_yr$otherbully_sec <-factor(dataset_sec_yr$otherbully_sec, levels=c("無","有") )
+dataset_sec_yr<- mutate( dataset_sec_yr, othervictim_sec=ifelse(q116_8_b=="無"& q116_9_b=="無"& q116_12_b=="無"&q116_14_b=="無", "無", "有"))
+dataset_sec_yr$othervictim_sec <-factor(dataset_sec_yr$othervictim_sec, levels=c("無","有") )
 
 
 # recurrent bully
@@ -129,10 +146,11 @@ dataset_sec_yr<- mutate(dataset_sec_yr, rec_bully_physical_secyr= ifelse(q116_28
 dataset_sec_yr<- mutate(dataset_sec_yr, rec_bully_verbal_secyr= ifelse(q116_26_b_factor3== "yes"|q116_32_b_factor3=="yes"|q116_33_b_factor3=="yes", "yes","no"))  
 dataset_sec_yr<- mutate(dataset_sec_yr, rec_bully_relational_secyr= ifelse(q116_11_b_factor3== "yes"|q116_12_b_factor3=="yes", "yes","no"))
 dataset_sec_yr<- mutate(dataset_sec_yr, rec_bully_other_secyr= ifelse(q116_27_b_factor3== "yes"|q116_29_b_factor3=="yes", "yes","no"))  
-dataset_sec_yr<- mutate(dataset_sec_yr, rec_bully_secyr= ifelse(
+dataset_sec_yr<- mutate(dataset_sec_yr, rec_bully_secyr= ifelse(q116_25_b_factor3=="yes"|
   q116_26_b_factor3=="yes"|q116_27_b_factor3=="yes"|q116_28_b_factor3=="yes"|
     q116_29_b_factor3=="yes"|q116_30_b_factor3=="yes"|q116_31_b_factor3=="yes"|
-    q116_32_b_factor3=="yes"| q116_33_b_factor3=="yes"| q116_34_b_factor3=="yes"|
+    #q116_32_b_factor3=="yes"| q116_33_b_factor3=="yes"| 
+    q116_34_b_factor3=="yes"|
     q116_36_b_factor3=="yes"
   , "yes","no")) 
 dataset_sec_yr$rec_bully_physical_secyr <- factor(dataset_sec_yr$rec_bully_physical_secyr, levels= c("no", "yes"))
@@ -146,9 +164,13 @@ dataset_sec_yr<- mutate(dataset_sec_yr, rec_victim_physical_secyr= ifelse(q116_6
 dataset_sec_yr<- mutate(dataset_sec_yr, rec_victim_verbal_secyr= ifelse(q116_4_b_factor3== "yes"|q116_10_b_factor3=="yes"|q116_11_b_factor3=="yes", "yes","no"))  
 dataset_sec_yr<- mutate(dataset_sec_yr, rec_victim_relational_secyr= ifelse(q116_5_b_factor3== "yes"|q116_7_b_factor3=="yes", "yes","no"))
 dataset_sec_yr<- mutate(dataset_sec_yr, rec_victim_other_secyr= ifelse(q116_8_b_factor3== "yes"|q116_9_b_factor3=="yes"|q116_12_b_factor3=="yes"|q116_14_b_factor3=="yes", "yes","no"))  
-dataset_sec_yr<- mutate(dataset_sec_yr, rec_victim_secyr= ifelse(q116_6_b_factor3== "yes"|q116_4_b_factor3== "yes"|q116_10_b_factor3=="yes"|q116_11_b_factor3=="yes"|
-                                                                   q116_5_b_factor3== "yes"|q116_7_b_factor3=="yes"|
-                                                                   q116_8_b_factor3== "yes"|q116_9_b_factor3=="yes"|q116_12_b_factor3=="yes"|q116_14_b_factor3=="yes" , "yes","no")) 
+dataset_sec_yr<- mutate(dataset_sec_yr, rec_victim_secyr= ifelse(q116_3_b_factor3== "yes"|q116_4_b_factor3== "yes"|
+                                                                   q116_5_b_factor3== "yes"|q116_6_b_factor3== "yes"|
+                                                                   q116_7_b_factor3=="yes"|q116_8_b_factor3== "yes"|
+                                                                   q116_9_b_factor3=="yes"|
+                                                                   #q116_10_b_factor3=="yes"|q116_11_b_factor3=="yes"|
+                                                                   q116_12_b_factor3=="yes"|
+                                                                   q116_14_b_factor3=="yes" , "yes","no")) 
 
 dataset_sec_yr$rec_victim_secyr <- factor(dataset_sec_yr$rec_victim_secyr, levels= c("no", "yes"))
 
@@ -164,14 +186,28 @@ dataset_sec_yr$rec_bv <- factor(dataset_sec_yr$secyr_rec_bv, levels= c("no", "ye
 # bully  group 1, 2, 3, 4: 1. non involved, "無"     2."只有一到二次"  3."一個月二到三次"         4."約一個星期一次"&"一個星期好幾次"
 
 
-dataset_sec_yr<- mutate(dataset_sec_yr, secyr_bully2= ifelse(q116_26_b_factor1=="yes"|q116_27_b_factor1=="yes"|q116_28_b_factor1=="yes"|
+dataset_sec_yr<- mutate(dataset_sec_yr, secyr_bully2= ifelse( q116_25_b_factor1=="yes"|q116_26_b_factor1=="yes"|q116_27_b_factor1=="yes"|q116_28_b_factor1=="yes"|
                                                                q116_29_b_factor1=="yes"|q116_30_b_factor1=="yes"|q116_31_b_factor1=="yes"|
-                                                               q116_32_b_factor1=="yes"| q116_33_b_factor1=="yes"| q116_34_b_factor1=="yes"|
+                                                               #q116_32_b_factor1=="yes"| q116_33_b_factor1=="yes"| 
+                                                                q116_34_b_factor1=="yes"|
                                                                q116_36_b_factor1=="yes", "yes","no")) 
 dataset_sec_yr$secyr_bully2<- factor(dataset_sec_yr$secyr_bully2, levels= c("no", "yes"))
-dataset_sec_yr<- mutate(dataset_sec_yr, bully_sec_group= ifelse(q116_26_b_factor4=="yes"|q116_27_b_factor4=="yes"|q116_28_b_factor4=="yes"|
+
+dataset_sec_yr<- mutate(dataset_sec_yr, secondyrbully2= ifelse( q116_25_b_factor1=="yes"|q116_26_b_factor1=="yes"|q116_27_b_factor1=="yes"|q116_28_b_factor1=="yes"|
+                                                                q116_29_b_factor1=="yes"|q116_30_b_factor1=="yes"|q116_31_b_factor1=="yes"|
+                                                                #q116_32_b_factor1=="yes"| q116_33_b_factor1=="yes"| 
+                                                                  q116_34_b_factor1=="yes"|
+                                                                q116_36_b_factor1=="yes", "有","無")) 
+dataset_sec_yr$secondyrbully2<- factor(dataset_sec_yr$secondyrbully2, levels= c("無", "有"))
+
+
+
+
+
+dataset_sec_yr<- mutate(dataset_sec_yr, bully_sec_group= ifelse(q116_25_b_factor4=="yes"|q116_26_b_factor4=="yes"|q116_27_b_factor4=="yes"|q116_28_b_factor4=="yes"|
                                                                   q116_29_b_factor4=="yes"|q116_30_b_factor4=="yes"|q116_31_b_factor4=="yes"|
-                                                                  q116_32_b_factor4=="yes"| q116_33_b_factor4=="yes"| q116_34_b_factor4=="yes"|
+                                                                  #q116_32_b_factor4=="yes"| q116_33_b_factor4=="yes"| 
+                                                                  q116_34_b_factor4=="yes"|
                                                                   q116_36_b_factor4=="yes", "group4",
                                                                 ifelse(rec_bully_secyr=="yes","group3",
                                                                        ifelse(secyr_bully2=="yes", "group2","group1"))))  
@@ -184,19 +220,22 @@ dataset_sec_yr$bully_sec_3group <- factor(dataset_sec_yr$bully_sec_3group, level
    # active bully
 dataset_sec_yr<- mutate(dataset_sec_yr, rec_bully_secyr_act= ifelse(
   q116_26_b_factor3=="yes"|q116_28_b_factor3=="yes"|
-    q116_30_b_factor3=="yes"|q116_31_b_factor3=="yes"|
-    q116_32_b_factor3=="yes"| q116_33_b_factor3=="yes"
+    q116_30_b_factor3=="yes"|q116_31_b_factor3=="yes"
+  
+    #q116_32_b_factor3=="yes"| q116_33_b_factor3=="yes" 
   , "yes","no")) 
 
 dataset_sec_yr<- mutate(dataset_sec_yr, secyr_bully2_act= ifelse(q116_26_b_factor1=="yes"|q116_28_b_factor1=="yes"|
-                                                              q116_30_b_factor1=="yes"|q116_31_b_factor1=="yes"|
-                                                               q116_32_b_factor1=="yes"| q116_33_b_factor1=="yes"
-                                                               , "yes","no")) 
+                                                              q116_30_b_factor1=="yes"|q116_31_b_factor1=="yes",
+                                                              # q116_32_b_factor1=="yes"| q116_33_b_factor1=="yes"
+                                                                "yes","no")) 
+
 dataset_sec_yr$secyr_bully2_act<- factor(dataset_sec_yr$secyr_bully2_act, levels= c("no", "yes"))
+
 dataset_sec_yr<- mutate(dataset_sec_yr, bully_sec_group_act= ifelse(q116_26_b_factor4=="yes"|q116_28_b_factor4=="yes"|
-                                                                  q116_30_b_factor4=="yes"|q116_31_b_factor4=="yes"|
-                                                                  q116_32_b_factor4=="yes"| q116_33_b_factor4=="yes"
-                                                                  , "group4",
+                                                                  q116_30_b_factor4=="yes"|q116_31_b_factor4=="yes",
+                                                               #   q116_32_b_factor4=="yes"| q116_33_b_factor4=="yes"
+                                                                   "group4",
                                                                 ifelse(rec_bully_secyr_act=="yes","group3",
                                                                        ifelse(secyr_bully2_act=="yes", "group2","group1"))))  
 dataset_sec_yr$bully_sec_group_act <- factor(dataset_sec_yr$bully_sec_group_act, levels= c("group1", "group2", "group3", "group4"))
@@ -211,14 +250,19 @@ dataset_sec_yr$bully_sec_3group_act <- factor(dataset_sec_yr$bully_sec_3group_ac
 
 
 
-dataset_sec_yr<- mutate(dataset_sec_yr, secyr_vic2= ifelse(q116_6_b_factor1== "yes"|q116_4_b_factor1== "yes"|q116_10_b_factor1=="yes"|q116_11_b_factor1=="yes"|
-                                                             q116_5_b_factor1== "yes"|q116_7_b_factor1=="yes"|
-                                                             q116_8_b_factor1== "yes"|q116_9_b_factor1=="yes"|q116_12_b_factor1=="yes"|q116_14_b_factor1=="yes", "yes","no")) 
+dataset_sec_yr<- mutate(dataset_sec_yr, secyr_vic2= ifelse(q116_3_b_factor1== "yes"|q116_4_b_factor1== "yes"|q116_5_b_factor1== "yes"|
+                                                             q116_6_b_factor1== "yes"|q116_7_b_factor1=="yes"|
+                                                             q116_8_b_factor1== "yes"|q116_9_b_factor1=="yes"|
+                                                             #q116_10_b_factor1=="yes"|q116_11_b_factor1=="yes"|
+                                                             q116_12_b_factor1=="yes"|q116_14_b_factor1=="yes", "yes","no")) 
 dataset_sec_yr$secyr_vic2 <- factor(dataset_sec_yr$secyr_vic2, levels= c("no", "yes")) 
 
-dataset_sec_yr<- mutate(dataset_sec_yr, victim_sec_group= ifelse(q116_6_b_factor4== "yes"|q116_4_b_factor4== "yes"|q116_10_b_factor4=="yes"|q116_11_b_factor4=="yes"|
-                                                                   q116_5_b_factor4== "yes"|q116_7_b_factor4=="yes"|
-                                                                   q116_8_b_factor4== "yes"|q116_9_b_factor4=="yes"|q116_12_b_factor4=="yes"|q116_14_b_factor4=="yes", "v_group4",
+dataset_sec_yr<- mutate(dataset_sec_yr, victim_sec_group= ifelse(q116_3_b_factor4== "yes"|q116_4_b_factor4== "yes"|
+                                                                   q116_5_b_factor4== "yes"|q116_6_b_factor4== "yes"|
+                                                                   q116_7_b_factor4=="yes"|q116_8_b_factor4== "yes"|
+                                                                   q116_9_b_factor4=="yes"|q116_10_b_factor4=="yes",
+                                                              #     q116_11_b_factor4=="yes"|q116_12_b_factor4=="yes"|q116_14_b_factor4=="yes"
+                                                                 "v_group4",
                                                                  ifelse(rec_victim_secyr=="yes","v_group3",
                                                                         ifelse(secyr_vic2=="yes", "v_group2","v_group1"))))  
 dataset_sec_yr$victim_sec_group <- factor(dataset_sec_yr$victim_sec_group, levels= c("v_group1", "v_group2", "v_group3", "v_group4"))
@@ -235,7 +279,33 @@ dataset_sec_yr$secyr_bv <- factor(dataset_sec_yr$secyr_bv, levels= c("no", "yes"
 dataset_sec_yr <- mutate(dataset_sec_yr, victim_sec_3group=ifelse(victim_sec_group=="v_group3"|victim_sec_group=="v_group4", "v2_repeated_being_bullied", ifelse(victim_sec_group=="v_group2","v1_1or2_times", "v0_not_being_bullied")))        
 dataset_sec_yr$victim_sec_3group <- factor(dataset_sec_yr$victim_sec_3group, levels= c("v0_not_being_bullied", "v1_1or2_times", "v2_repeated_being_bullied"))
 
+##victim of active bullying
 
+dataset_sec_yr<- mutate(dataset_sec_yr, rec_victim_secyr_act= ifelse( q116_4_b_factor3== "yes"| 
+                                                            q116_5_b_factor3== "yes"|
+                                                            q116_6_b_factor3=="yes" 
+                                                          , "yes","no")) 
+
+dataset_sec_yr$rec_victim_secyr_act <- factor(dataset_sec_yr$rec_victim_secyr_act, levels= c("no", "yes"))        
+
+
+dataset_sec_yr<- mutate(dataset_sec_yr, secyr_victim_act= ifelse(q116_4_b_factor1== "yes"|q116_5_b_factor1== "yes"|q116_6_b_factor1=="yes" 
+                                                     , "yes","no")) 
+
+dataset_sec_yr$secyr_victim_act<- factor(dataset_sec_yr$secyr_victim_act, levels= c("no", "yes"))
+
+
+dataset_sec_yr<- mutate(dataset_sec_yr, victim_group_act_2= ifelse(q116_4_b_factor4== "yes"| q116_5_b_factor4== "yes"|q116_6_b_factor4=="yes" 
+                                                   , "group4",
+                                                   ifelse(rec_victim_secyr_act=="yes","group3",
+                                                          ifelse(secyr_victim_act=="yes", "group2","group1"))))  
+dataset_sec_yr$victim_group_act_2 <- factor(dataset_sec_yr$victim_group_act_2, levels= c("group1", "group2", "group3", "group4"))
+
+dataset_sec_yr <- mutate(dataset_sec_yr, victim_3group_act_2=ifelse(victim_group_act_2=="group3"|victim_group_act_2=="group4", 
+                                                    "v2_repeated_being_bullied", 
+                                                    ifelse(victim_group_act_2=="group2",
+                                                           "v1_1or2_times", "v0_not_being_bullied"))) 
+dataset_sec_yr$victim_3group_act_2 <- factor(dataset_sec_yr$victim_3group_act_2, levels= c("v0_not_being_bullied", "v1_1or2_times", "v2_repeated_being_bullied")) 
 
 ## incidence
 dataset_sec_yr <- mutate(dataset_sec_yr, less_bully= ifelse(firstyr_bully2== "yes"& secyr_bully2=="no","yes","no" ))
@@ -420,6 +490,12 @@ dataset_sec_yr <-  mutate(dataset_sec_yr, secondyr_rses_neg= (secondyr_rses- sec
 dataset_sec_yr <- mutate(dataset_sec_yr, bully_inv_secyr= ifelse(secyr_bv=="yes", "3_bv", ifelse(secyr_pureb=="yes", "4_pureb", ifelse(secyr_purev=="yes", "2_purev", "1_not_inv"))))
 dataset_sec_yr <- mutate(dataset_sec_yr, bully_inv_act_secyr= ifelse(secyr_bv_act=="yes", "2_bv", ifelse(secyr_pureb_act=="yes", "1_pureb", ifelse(secyr_purev=="yes", "3_purev", "4_not_inv"))))
 
+
+
+#
+dataset <- dataset_sec_yr
+
+
 # 挑independent_var與dependent_var出來
 
 selected_variables2 <- c("firstyrbully2","firstyrvic2", "bully_3group", "victim_3group", "rec_victim_firstyr", "rec_bully_firstyr", "firstyrpurev", "firstyr_pureb","firstyr_purev", 
@@ -463,6 +539,61 @@ dataset_sec_yr_selected_ordinal_imp$victim_sec_3group <- ordered(dataset_sec_yr_
 
 dataset_sec_yr_selected_ordinal_imp$bully_3group <- ordered(dataset_sec_yr_selected_ordinal_imp$bully_3group, levels= c("no_bullying", "1or2_times", "repeated_bullying"))
 dataset_sec_yr_selected_ordinal_imp$victim_3group <- ordered(dataset_sec_yr_selected_ordinal_imp$victim_3group, levels= c("not_being_bullied", "1or2_times", "repeated_being_bullied"))
+
+
+####
+
+# build testing dataset
+testing_variables2 <- c(
+  "firstyrbully2", "firstyrvic2",
+  "secondyrbully2","secondvic2", "bully_sec_3group", "victim_sec_3group", "rec_victim_secyr", "rec_bully_secyr", "secondyrpurev", "secondyrpureb",
+  "secyr_bully2" ,"secyr_vic2", "secyr_pureb", "secyr_purev","secyr_bv", "secyr_bully2_act",
+  "physicalbully_sec", "verbalbully_sec", "relationalbully_sec", "otherbully_sec",
+  "physicalvictim_sec", "verbalvictim_sec", "relationalvictim_sec",  
+  "victim_3group_act_2",
+  #"physicalb_3group","verbalb_3group","relationalb_3group",
+  
+  
+  "q3_b","q4_b","q5_b","q6_b","q7_b","q8_b", "q10_b", "school_PR","q22_b",
+  "q68_b","AUDIT_C_4_b", "AUDIT_C_b", "PHQ9_2yr", "q31_0_b", "q22_0_b", "parent2_MDSS", "teacher2_MDSS","peer2", "secondtrses", "secondtrses_standardized",
+  "bis2_total", "bis2_standardized", 
+  "bis2_inability_to_plan", "bis2_novelty_seeking", "bis2_lack_of_selfcontrol",
+  "bis2_inability_to_plan_standardized", "bis2_novelty_seeking_standardized", "bis2_lack_of_selfcontrol_standardized"
+)
+
+dataset_sec_yr_testing <- dataset_sec_yr[,testing_variables2]
+
+dataset_sec_yr_testing<- dataset_sec_yr_testing%>% dplyr::rename(
+  "pastyrbully2"="firstyrbully2","pastyrvic2"="firstyrvic2",
+  "firstyrbully2"="secondyrbully2","firstyrvic2"="secondvic2", 
+  "firstyr_bully2"= "secyr_bully2","firstyr_vic2"="secyr_vic2",
+  "bully_3group"="bully_sec_3group", "victim_3group"="victim_sec_3group", 
+  "rec_victim_firstyr"="rec_victim_secyr", "rec_bully_firstyr"="rec_bully_secyr", "firstyrpurev"="secondyrpurev", "firstyrpureb"="secondyrpureb",
+   "firstyr_pureb"="secyr_pureb", 
+  "firstyr_purev"="secyr_purev","firstyr_bv"="secyr_bv",
+  "physicalbully"="physicalbully_sec", "verbalbully"="verbalbully_sec", "relationalbully"="relationalbully_sec", "otherbully"="otherbully_sec",
+  "physicalvictim"="physicalvictim_sec", "verbalvictim"="verbalvictim_sec", "relationalvictim"="relationalvictim_sec", 
+  "firstyr_bully2_act"="secyr_bully2_act",
+  "victim_3group_act"= "victim_3group_act_2",
+  
+  
+  "q3_a"="q3_b","q4_a"="q4_b","q5_a"="q5_b","q6_a"="q6_b","q7_a"="q7_b","q8_a"="q8_b", "q10_a"="q10_b", "school_PR"="school_PR","q22_a"="q22_b",
+  "q68_a"="q68_b","AUDIT_C_4_a"="AUDIT_C_4_b", "AUDIT_C_a"="AUDIT_C_b", "PHQ9_1yr_new"="PHQ9_2yr", "q31_0_a"="q31_0_b", "q22_0_a"="q22_0_b",
+  "parent1_MDSS"= "parent2_MDSS","teacher_MDSS"="teacher2_MDSS",  "peer1"="peer2", "firstrses"="secondtrses", "firstrses_standardized"="secondtrses_standardized",
+  "bis1_total"="bis2_total", "bis1_standardized"="bis2_standardized", 
+  "bis1_inability_to_plan"="bis2_inability_to_plan", "bis1_novelty_seeking"="bis2_novelty_seeking", "bis1_lack_of_selfcontrol"="bis2_lack_of_selfcontrol",
+  "bis1_inability_to_plan_standardized"= "bis2_inability_to_plan_standardized",
+  "bis1_novelty_seeking_standardized"="bis2_novelty_seeking_standardized", "bis1_lack_of_selfcontrol_standardized"="bis2_lack_of_selfcontrol_standardized")
+
+
+
+#dataset_sec_yr_testing <- mutate(dataset_sec_yr_testing, bully_inv= ifelse(firstyr_bv=="yes", "3_bv", ifelse(firstyr_pureb=="yes", "4_pureb", ifelse(firstyr_purev=="yes", "2_purev", "1_not_inv"))))
+tempData <- mice(dataset_sec_yr_testing, m=5)
+dataset_sec_yr_testing_imp <- mice::complete(tempData)
+
+
+
+
 
 
 # write dataset_selected to rearranged_dataset.csv

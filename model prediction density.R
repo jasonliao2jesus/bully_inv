@@ -1,32 +1,227 @@
 
 source("cat_var_bar.R")
 
+cat_var_bar()
+#
+model0 <- model1.imp
+pred1 <- predicted.mypaper(model1.imp)
+pred2 <- predicted.mypaper(model2.imp)
+pred3 <- predicted.mypaper(model3.imp)
+
+#
+
+data.pred <- model0$data
+data0 <- cbind(data.pred,  predicted_pro_2 = pred1$Predicted, predicted_pro_21=pred3$Predicted, predicted_pro_rec= pred2$Predicted)
+
 k <- cat_var_bar(dep_var = "bully_3group", dep_var_name = "Bullying Perpetration", 
             dep_var_level = c("Never", "1 or 2 times", "Frequent"), ind_var = "victim_3group")
-legend_bully_grp <-get_palette(k) 
+legend_bully_grp <-get_legend(k) 
+
+#
+plot.mod2 <- ggplot() + geom_boxplot(data=data0, aes(x= predicted_pro_2, y= bully_3group), alpha=0.1)
+
+plot.mod21 <- ggplot() + geom_boxplot(data=data0, aes(x= predicted_pro_21, y= bully_3group_act),alpha=0.1)
+
+plot.modrec <- ggplot() + geom_boxplot(data=data0, aes(x= predicted_pro_rec, y= bully_3group), alpha=0.1)
 
 #Fig S4
-  model_density <-  ggdensity(data1,
-            x="predicted_pro_2", y= "..count..", #add = "median", 
-            rug = TRUE,alpha=0.3, col="bully_3group",
-            facet.by = c("q3_a"),panel.labs =list( q3_a= c("Female", "Male")),
-            fill="bully_3group",xlab = "Predicted Probability of Bullying Perpetration",
+#data0= data1 
+facet_var="q3_a" 
+predicted= "predicted_pro_21"
+bully= "bully_3group_act"
+
+ model_density <-  ggdensity(data0, #%>%filter(firstyrbully2=="有"),
+            x=predicted, y= "..count..", #add = "median", 
+            rug = TRUE,alpha=0.3, col=bully,
+           # facet.by = facet_var,
+            panel.labs =list( q3_a= c("Female", "Male")),
+            fill=bully,xlab = "Predicted Probability of Bullying Perpetration",
             ylab = "Relative Proportion",
             
-            #palette = legend_bully_grp, 
+            #palette = grab_legend(q3_a_bully), 
             position="fill")
+
+  
+  #data0= data1%>%filter(firstyrbully2=="有")
+  
+  k="relationalb_3group" 
+
+  plot1 <-  ggdensity(data0%>%filter(firstyrbully2=="有"),
+                      x=predicted, y="..count..", #add = "median", 
+                      rug = TRUE,alpha=0.3, col= k,
+                    #  facet.by = facet_var,
+                      panel.labs =list( q3_a= c("Female", "Male")),
+                      fill=k,xlab = "Predicted Probability of Bullying Perpetration",
+                      ylab = "Relative Proportion",
+                      #palette = grab_legend(q3_a_bully), 
+                      position="fill") 
   
   
-  k="bully_3group"
-  facet_var="physicalbully" 
-  ggdensity(data1,
-            x="predicted_pro_2", #add = "median", 
+  k="verbalb_3group" 
+  facet_var="q3_a"
+  plot2 <- ggdensity(data0%>%filter(firstyrbully2=="有"),
+                     x=predicted, y="..count..", #add = "median", 
+                     rug = TRUE,alpha=0.3, col= k,
+                  #  facet.by = c(facet_var),
+                    panel.labs =list( q3_a= c("Female", "Male")),
+                     fill=k,xlab = "Predicted Probability of Bullying Perpetration",
+                     ylab = "Relative Proportion",
+                     #palette = grab_legend(q3_a_bully), 
+                     position="fill") 
+  
+  
+  
+  
+  k= "physicalb_3group"
+
+  plot3 <- ggdensity(data0%>%filter(firstyrbully2=="有"),
+                     x=predicted, y="..count..", #add = "median", 
+                     rug = TRUE,alpha=0.3, col= k,
+                   # facet.by = c(facet_var),
+                    panel.labs =list( q3_a= c("Female", "Male")),
+                     fill=k,xlab = "Predicted Probability of Bullying Perpetration",
+                     ylab = "Relative Proportion",
+                     #palette = grab_legend(q3_a_bully), 
+                     position="fill" ) 
+  
+  k= "otherb_3group"
+  facet_var= "q3_a"
+  plot4 <- ggdensity(data0%>%filter(firstyrbully2=="有"),
+                     x=predicted, y="..count..", #add = "median", 
+                     rug = TRUE,alpha=0.3, col= k,
+                    # facet.by = facet_var,
+                     panel.labs =list( q3_a= c("Female", "Male")),
+                     fill=k,xlab = "Predicted Probability of Bullying Perpetration",
+                     ylab = "Relative Proportion",
+                     #palette = grab_legend(q3_a_bully), 
+                     position="fill") 
+
+  
+  fig_0 <-  ggarrange(
+    model_density,plot3,plot2, plot1,
+    labels = c(
+      "A", "B","C","D"
+    ),label.y = 1.05, legend = "right", common.legend = F, nrow = 4
+  )
+  
+  fig_1 <-  ggarrange(
+     model_density,plot3,plot2, plot1,
+    labels = c(
+      "A", "B","C","D"
+    ),label.y = 1.05, legend = "right", common.legend = F, nrow = 4
+  )    
+  
+#############################  
+  #Fig S4
+  data0= data1 
+  
+  model_density1 <-  ggdensity(data0, #%>%filter(firstyrbully2=="有"),
+                              x="predicted_pro_21", y= "..count..", #add = "median", 
+                              rug = TRUE,alpha=0.3, col="bully_3group_act",
+                              facet.by = c("q3_a"),
+                              panel.labs =list( q3_a= c("Female", "Male")),
+                              fill="bully_3group_act",xlab = "Predicted Probability of Bullying Perpetration",
+                              ylab = "Relative Proportion",
+                              
+                              #palette = legend_bully_grp, 
+                              position="fill")
+  
+  
+ # data0= data1%>%filter(firstyr_bully2_act=="yes")
+  
+  k="relationalb_3group" 
+  facet_var="q3_a" 
+  plot1 <-  ggdensity(data0,
+                      x="predicted_pro_21", y="..count..", #add = "median", 
+                      rug = TRUE,alpha=0.3, col= k,
+                       facet.by = facet_var,
+                      #   "bully_3group"),
+                      fill=k,xlab = "Predicted Probability of Bullying Perpetration",
+                      ylab = "Relative Proportion",
+                      #palette = grab_legend(q3_a_bully), 
+                      position="fill") 
+  
+  
+  k="verbalb_3group" 
+  plot2 <- ggdensity(data0,
+                     x="predicted_pro_21", y="..count..", #add = "median", 
+                     rug = TRUE,alpha=0.3, col= k,
+                      facet.by = facet_var,
+                     #   "bully_3group"),
+                     fill=k,xlab = "Predicted Probability of Bullying Perpetration",
+                     ylab = "Relative Proportion",
+                     #palette = grab_legend(q3_a_bully), 
+                     position="fill") 
+  
+  
+  
+  
+  k= "physicalb_3group"
+  plot3 <- ggdensity(data0,
+                     x="predicted_pro_21", y="..count..", #add = "median", 
+                     rug = TRUE,alpha=0.3, col= k,
+                     facet.by = facet_var,
+                    
+                     fill=k,xlab = "Predicted Probability of Bullying Perpetration",
+                     ylab = "Relative Proportion",
+                     #palette = grab_legend(q3_a_bully), 
+                     position="fill" ) 
+  
+  k= "otherb_3group"
+  facet_var= "bully_3group"
+  plot4 <- ggdensity(data0,
+                     x="predicted_pro_21", y="..count..", #add = "median", 
+                     rug = TRUE,alpha=0.3, col= k,
+                     #facet.by = c(facet_var
+                     #),
+                     fill=k,xlab = "Predicted Probability of Bullying Perpetration",
+                     ylab = "Relative Proportion",
+                     #palette = grab_legend(q3_a_bully), 
+                     position="fill" ) 
+  
+  
+  fig_2 <-  ggarrange(
+    model_density1,plot3,plot2, plot1,
+    labels = c(
+      "A", "B","C","D"
+    ),label.y = 1.05, legend = "right", common.legend = F, nrow = 4
+  )      
+  
+##
+  data0= data1 
+  
+  model_density_rec <-  gghistogram(data0, #%>%filter(firstyrbully2=="有"),
+                               x="predicted_pro_rec", y= "..count..", #add = "median", 
+                               rug = TRUE,alpha=0.3, col="bully_3group",
+                               facet.by = c("q3_a"),
+                               panel.labs =list( q3_a= c("Female", "Male")),
+                               fill="bully_3group",xlab = "Predicted Probability of Bullying Perpetration",
+                               ylab = "Relative Proportion",
+                               
+                               #palette = legend_bully_grp, 
+                               position="fill")
+  
+  
+  fig_models <- ggarrange(
+    model_density,model_density1,model_density_rec,
+    labels = c(
+      "A", "B","C"
+    ),label.y = 1.05, legend = "right", common.legend = F, nrow = 3
+  ) 
+  
+  
+#####  
+  k="physicalb_3group" 
+  facet_var= "bully_3group"
+  ggdensity(data1%>%filter(firstyrbully2=="有"),
+            x="predicted_pro_2",y= "..density..", #add = "median", 
             rug = TRUE,alpha=0.3, col= k,
-            facet.by = c(facet_var),panel.labs =list( physicalbully= c("physical bullying-", "physical bullying+")),
+            facet.by = c("victim_3group"), #facet_var),#panel.labs =list( physicalbully= c("physical bullying-", "physical bullying+")),
             fill=k,xlab = "Predicted Probability of Bullying Perpetration",
             ylab = "Relative Proportion",
             #palette = grab_legend(q3_a_bully), 
-            position="fill")
+            position="fill"
+            )
 ###############################################################  
   
   k="bully_3group"
@@ -65,54 +260,7 @@ legend_bully_grp <-get_palette(k)
   ##
   
   
-  
-  k="relationalbully" 
-  facet_var="q3_a"
-  plot1 <-  ggdensity(data1,
-            x="predicted_pro_2",, y="..count..", #add = "median", 
-            rug = TRUE,alpha=0.3, col= k,
-            facet.by = c(#facet_var,
-              "bully_3group"),
-            fill=k,xlab = "Predicted Probability of Bullying Perpetration",
-            ylab = "Relative Proportion",
-            #palette = grab_legend(q3_a_bully), 
-            position="fill") 
-  
-  
-  k="verbalbully" 
-  facet_var="q3_a"
-  plot2 <- ggdensity(data1,
-            x="predicted_pro_2",, y="..count..", #add = "median", 
-            rug = TRUE,alpha=0.3, col= k,
-            facet.by = c(#facet_var,
-              "bully_3group"),
-            fill=k,xlab = "Predicted Probability of Bullying Perpetration",
-            ylab = "Relative Proportion",
-            #palette = grab_legend(q3_a_bully), 
-            position="fill") 
-  
-  
-  
-  
-  k= "physicalbully"
- 
-  plot3 <- ggdensity(data1,
-            x="predicted_pro_2",, y="..count..", #add = "median", 
-            rug = TRUE,alpha=0.3, col= k,
-            facet.by = c(#facet_var,
-                         "bully_3group"),
-            fill=k,xlab = "Predicted Probability of Bullying Perpetration",
-            ylab = "Relative Proportion",
-            #palette = grab_legend(q3_a_bully), 
-            position="fill") 
-  
-  
-  fig_1 <-  ggarrange(
-    plot1,plot2, plot3,
-    labels = c(
-      "A", "B","C"
-    ),label.y = 1.05, legend = "right", common.legend = T, nrow = 3
-  )
+
   
   
   k= "physicalbully"
@@ -175,11 +323,14 @@ facet_var="bully_3group"
 density_plot <- model_density+rremove("legend")
 
 fig_1 <-  ggarrange(
-  density_plot, ,
+  density_plot, 
   labels = c(
     "A", "B","C"
   ), legend = "right", common.legend = TRUE, nrow = 3
 )
+
+
+ggplot(data=dataset)+ geom_bar(aes(x=victim_3group,y=..count.., fill=physicalbully), position="fill")+ facet_wrap(~bully_3group)
 
 
    

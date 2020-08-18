@@ -155,9 +155,9 @@ dataset_sec_yr_testing_nopurev <- dataset_sec_yr_testing%>%filter(firstyrvic2=="
 
 # ROC and AUC 1st yr
 plot.new()
-prob <- predict(dataset_sec_glm_binomial,dataset, type="response")
-dataset$prob <- prob
-g <- roc(firstyrbully2~prob, data=dataset, percent=TRUE,
+prob <- predict(model_2, type="response")
+dataset_selected$prob <- prob
+g <- roc(firstyrbully2~prob, data=dataset_selected%>%filter(!is.na(q5_a)), percent=TRUE,
          
          ci=TRUE, print.auc=TRUE)
 ciobj<- ci.se(g, # CI of sensitivity
@@ -166,12 +166,11 @@ ciobj<- ci.se(g, # CI of sensitivity
 
 # plot as a blue shape
 
-pROC::auc(g)  
+#pROC::auc(g)  
  # ROC and AUC: 2nd yr 
- dataset_sec_yr_testing <- mutate(dataset_sec_yr_testing, firstyrbully = ifelse(firstyrbully2=="¦³", 1, 0))
- prob <- predict(dataset_sec_glm_binomial,dataset_sec_yr_testing, type="response")
- dataset_sec_yr_testing$prob <- prob
- g_2 <- roc(firstyrbully2~prob, data=dataset_sec_yr_testing, percent=TRUE,
+ prob2 <- predict(model_2_rec, type="response")
+ dataset_selected$prob2 <- prob2
+ g_2 <- roc(rec_bully_firstyr~prob, data=dataset_selected, percent=TRUE,
             
             ci=TRUE, print.auc=TRUE)
  ciobj_2 <- ci.se(g_2, # CI of sensitivity
@@ -378,7 +377,7 @@ dataset_sec_yr_testing_act<- dataset_sec_yr_testing_act%>% dplyr::rename(
 
 #dataset_sec_yr_testing <- mutate(dataset_sec_yr_testing, bully_inv= ifelse(firstyr_bv_act=="yes", "2_bv", ifelse(firstyr_pureb_act=="yes", "1_pureb", ifelse(firstyr_purev=="yes", "3_purev", "4_not_inv"))))
 
-
+dataset_selected_imp$first
 
 tempData <- mice(dataset_sec_yr_testing_act, m=5)
 dataset_sec_yr_testing_act_imp <- mice::complete(tempData)

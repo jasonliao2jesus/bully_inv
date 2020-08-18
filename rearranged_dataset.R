@@ -5,28 +5,16 @@
 # 浪琩Τ礚杆packages 璝⊿Τ碞杆
 want <-c( "foreign","caret", "dplyr", "forcats","e1071",
           "dbplyr", "MASS", "tidyverse", "Hmisc", "rms","PredictABEL", "mediation", "ggplot2", "effsize", "VGAM", 
-         "lmtest","pscl","survey", "oddsratio", "mice","car","rpart","caret","rlang",
+         "lmtest","pscl","survey", "oddsratio", "mice","car","rpart","caret","rlang","esc",
          "lattice","boot","ROCR","pROC", "brglm2", "Metrics","InformationValue", 
          "dominanceanalysis", "shrink", "Information", "ggrepel", "vctrs", "ggpubr", "rms", "PredictABEL",
-         "ggrepel","esc","xlsx")
+         "ggrepel","esc","xlsx","MLeval","kernlab")
 has <- want %in% rownames(installed.packages())
 if(any(!has)) install.packages(want[!has])
 
 # loaded libraries
  
 
-library(caret)
-library(dplyr)
-library(MASS)
-library(tidyverse)
-library(Hmisc)
-library(mediation)
-library(ggplot2)
-library(effsize)
-library(VGAM)
-library(foreign)
-library(Information)
-library(forcats)
 
 library(mice)
 library(oddsratio)
@@ -47,6 +35,8 @@ library("pROC")
 library(pscl)
 library(esc)
 library(ggrepel)
+library(kernlab)
+library(MLeval)
 #library(xlsx)
 #dataset$rec
 # 
@@ -227,12 +217,12 @@ dataset <- mutate(dataset, bully_3group=ifelse(bully_group=="group3"|bully_group
                                                               , "yes","no")) 
         
         dataset$rec_bully_firstyr_act <- factor(dataset$rec_bully_firstyr_act, levels= c("no", "yes"))        
-dataset_sec_yr$bully
+
         
 dataset<- mutate(dataset, firstyr_bully2_act= ifelse(q115_8_a_factor1== "yes"|q115_9_a_factor1== "yes"|q115_10_a_factor1=="yes" 
           , "yes","no")) 
 
-dataset$firstyr_bully2_act<- factor(dataset$firstyr_bully2_act, levels= c("no", "yes"))
+dataset$firstyr_bully2_act<- factor(dataset$firstyr_bully2_act, levels= c("no", "yes"), ordered = T)
 
 
 dataset<- mutate(dataset, bully_group_act= ifelse(q115_8_a_factor4== "yes"| q115_9_a_factor4== "yes"|q115_10_a_factor4=="yes" 
@@ -247,8 +237,17 @@ dataset <- mutate(dataset, bully_3group_act=ifelse(bully_group_act=="group3"|bul
                                                       "1or2_times", "no_bullying"))) 
 dataset$bully_3group_act <- factor(dataset$bully_3group_act, levels= c("no_bullying", "1or2_times", "repeated_bullying"))  
 
-
+#
+dataset <- mutate(dataset, physicalb_3group= ifelse(physicalbully=="礚", "0", ifelse(rec_bully_physical=="no", "1or2", "repeated")))
         
+
+dataset <- mutate(dataset, relationalb_3group= ifelse(relationalbully=="礚", "0", ifelse(rec_bully_relational=="no", "1or2", "repeated")))
+
+
+dataset <- mutate(dataset, verbalb_3group= ifelse(verbalbully=="礚", "0", ifelse(rec_bully_verbal=="no", "1or2", "repeated")))
+
+
+
  # 4 victim group: 
         
 
@@ -296,6 +295,34 @@ dataset  <- mutate(dataset, victim_3group=ifelse(victim_group=="v_group3"|victim
 dataset$victim_3group <- factor(dataset$victim_3group, levels= c("v0_not_being_bullied", "v1_1or2_times", "v2_repeated_being_bullied"))
 
 
+
+# victim of active bullying
+dataset<- mutate(dataset, rec_victim_firstyr_act= ifelse( q115_1_a_factor3== "yes"| 
+                                                                q115_2_a_factor3== "yes"|
+                                                                q115_3_a_factor3=="yes" 
+                                                        , "yes","no")) 
+
+dataset$rec_victim_firstyr_act <- factor(dataset$rec_bully_firstyr_act, levels= c("no", "yes"))        
+
+
+dataset<- mutate(dataset, firstyr_victim_act= ifelse(q115_1_a_v_factor1== "yes"|q115_2_a_v_factor1== "yes"|q115_3_a_v_factor1=="yes" 
+                                                     , "yes","no")) 
+
+dataset$firstyr_victim_act<- factor(dataset$firstyr_victim_act, levels= c("no", "yes"))
+
+
+dataset<- mutate(dataset, victim_group_act= ifelse(q115_1_a_factor4== "yes"| q115_2_a_factor4== "yes"|q115_3_a_factor4=="yes" 
+                                                  , "group4",
+                                                  ifelse(rec_victim_firstyr_act=="yes","group3",
+                                                         ifelse(firstyr_victim_act=="yes", "group2","group1"))))  
+dataset$victim_group_act <- factor(dataset$victim_group_act, levels= c("group1", "group2", "group3", "group4"))
+
+dataset <- mutate(dataset, victim_3group_act=ifelse(victim_group_act=="group3"|victim_group_act=="group4", 
+                                                   "v2_repeated_being_bullied", 
+                                                   ifelse(victim_group_act=="group2",
+                                                          "v1_1or2_times", "v0_not_being_bullied"))) 
+dataset$victim_3group_act <- factor(dataset$victim_3group_act, levels= c("v0_not_being_bullied", "v1_1or2_times", "v2_repeated_being_bullied")) 
+
 #re-arrange and re-prioritize factors
 
 #re-arrange and re-prioritize factors
@@ -309,6 +336,8 @@ dataset$q3_a <- factor(dataset$q3_a, levels=c("","╧"))
 dataset$q8_a <- factor(dataset$q8_a, levels=c("琌",""))
 dataset$q7_a <- factor(dataset$q7_a, levels=c("","琌"))
 dataset$q5_a <- factor(dataset$q5_a, levels=c("Τ","⊿Τ"))
+dataset <- mutate(dataset,q5.a=  ifelse( is.na(dataset$q5_a)|dataset$q5_a=="⊿Τ", "⊿Τ","Τ"))
+dataset$q5.a <- factor(dataset$q5.a, levels=c("Τ","⊿Τ"))
 dataset$q6_a <- factor(dataset$q6_a, levels=c("Τ","⊿Τ"))
 
 
@@ -455,18 +484,6 @@ bis2_mean <- mean(dataset$bis2)
 bis2_sd <- sd(dataset$bis2)
 dataset<- mutate(dataset,bis2_standardized =(bis2-bis2_mean)/bis2_sd)
 
-bis2_inability_to_plan_mean <- mean(dataset$bis2_inability_to_plan)
-bis2_inability_to_plan_sd <- sd(dataset$bis2_inability_to_plan)
-dataset<- mutate(dataset,bis2_inability_to_plan_standardized =(bis2_inability_to_plan-bis2_inability_to_plan_mean)/bis2_inability_to_plan_sd)
-
-bis2_lack_of_selfcontrol_mean <- mean(dataset$bis2_lack_of_selfcontrol)
-bis2_lack_of_selfcontrol_sd <- sd(dataset$bis2_lack_of_selfcontrol)
-dataset<- mutate(dataset,bis2_lack_of_selfcontrol_standardized =(bis2_lack_of_selfcontrol-bis2_lack_of_selfcontrol_mean)/bis2_lack_of_selfcontrol_sd)
-
-
-bis2_novelty_seeking_mean <- mean(dataset$bis2_novelty_seeking)
-bis2_novelty_seeking_sd <- sd(dataset$bis2_novelty_seeking)
-dataset<- mutate(dataset,bis2_novelty_seeking_standardized =(bis2_novelty_seeking-bis2_novelty_seeking_mean)/bis2_novelty_seeking_sd)
 # self esteem
 dataset <-  mutate(dataset, q73_a_code= ifelse(q73_a=="Чぃ才",1,ifelse(q73_a== "场だぃ才",2,ifelse(q73_a== "场だ才",3, 4 ))))
 dataset <-  mutate(dataset, q74_a_code= ifelse(q74_a=="Чぃ才",4,ifelse(q74_a=="场だぃ才",3,ifelse(q74_a=="场だ才",2, 1 ))))
@@ -502,10 +519,17 @@ dataset<- mutate(dataset, bully_inv_more= ifelse(rec_bully_firstyr=="yes"& rec_v
                                                                       ifelse(rec_victim_firstyr=="yes"& firstyr_bully2=="no", "3_b0v2", 
                                                                              ifelse(firstyr_bully2=="yes"& firstyr_vic2=="yes", "4_b1v1", 
                                                                                     ifelse(firstyr_bully2=="yes"& firstyr_vic2=="no", "8_b1v0", 
-                                                                                           ifelse(firstyr_vic2=="yes", "2_b0v1", "1_b0v0")))))))))
+                                                                                       ifelse(firstyr_vic2=="yes", "2_b0v1", "1_b0v0")))))))))
 
 
 dataset<-mutate(dataset, firstyrbully_1or0= ifelse(firstyrbully2=="Τ",1,0 ))
+dataset<-mutate(dataset, firstyr_bully2_act_1or0= ifelse(firstyr_bully2_act=="yes",1,0 ))
+dataset<- mutate(dataset, rec_bully_1or0= ifelse(rec_bully_firstyr=="yes", 1,0))
+dataset <- mutate(dataset, rec_bully_act_1or0=ifelse(rec_bully_firstyr_act=="yes", 1,0))
+
+dataset_selected<-mutate(dataset_selected, physicalbully_1or0= ifelse(physicalbully=="Τ",1,0 ))
+
+
 dataset<- mutate(dataset, rec_bully_1or0= ifelse(rec_bully_firstyr=="yes", 1,0))
 dataset <- mutate(dataset, rec_bully_act_1or0=ifelse(rec_bully_firstyr_act=="yes", 1,0))
 # create real age
@@ -529,7 +553,9 @@ selected_variables <- c("firstyrbully2","victim_3group", "firstyrbully_1or0", "b
                         "rec_bully_1or0","rec_bully_act_1or0",
                         "firstyrvic2","rec_victim_firstyr",
                         "rec_bully_firstyr","rec_bully_firstyr_act", "physicalbully", "verbalbully", "relationalbully", "otherbully",
+                        "victim_3group_act", 
                         "physicalvictim", "verbalvictim", "relationalvictim", 
+                        "firstyr_bully2_act", 'firstyrpurev','firstyr_pureb','firstyrpureb','firstyrpureb','firstyr_bully2','firstyrpurev','firstyrpureb',
                         
                         
                         
@@ -556,18 +582,6 @@ dataset_selected <- dataset[,selected_variables]
 tempData <- mice(dataset_selected, m=5)
 dataset_selected_imp <- mice::complete(tempData)
 
-dataset_table2_imp<-dataset_selected_imp%>%filter(firstyrpurev=="礚")
-dataset_table3_imp<-dataset_selected_imp%>%filter(firstyr_pureb=="no")
-dataset_bv_vs_noninvolved_imp<-dataset_selected_imp%>%filter(firstyr_pureb=="no" & firstyrpurev=="礚")
-dataset_b_imp<-dataset_selected_imp%>%filter(firstyrbully2=="Τ")
-dataset_v_imp<-dataset_selected_imp%>%filter(firstyrvic2=="Τ")
-
-dataset_pureb_imp<-dataset_selected_imp%>%filter(firstyrvic2=="礚")
-dataset_purev_imp<-dataset_selected_imp%>%filter(firstyr_bully2=="no") 
-
-dataset_selected_ordinal_imp <- dataset_selected_imp
-dataset_selected_ordinal_imp$bully_3group <- ordered(dataset_selected_ordinal_imp$bully_3group, levels= c("no_bullying", "1or2_times", "repeated_bullying"))
-dataset_selected_ordinal_imp$victim_3group <- ordered(dataset_selected_ordinal_imp$victim_3group, levels= c("not_being_bullied", "1or2_times", "repeated_being_bullied"))
 
 # write dataset_selected to rearranged_dataset.csv
 write.table(dataset_selected_imp, output_file)

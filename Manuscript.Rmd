@@ -1,0 +1,120 @@
+
+---
+title: Impulsivity,Alcohol Use, and Frequency of Bullying victimization as Predictors
+  for Coexisting Bullying Perpetration among Taiwanese Adolescents
+author: "Tzu-Hsien Liao1, Kuo-Yang Huang2, Shen-Ing Liu 1,3*"
+date: "2020/5/12"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#load("myWorkSpace.RData")
+source("rearranged_dataset.R")
+source("fig_1_bis_bullies.R")
+source("fig_s1_1.R")
+source("fig_s2_1.R")
+source("fig_s1_2_num_bully_inv.R")
+source("fig_s3_woe_iv_bullies.R")
+source("table2.R")
+source("plot_calibration.R")
+library(knitr)
+```
+
+## Results
+
+#Descriptive statistics and Data Visualization
+
+Among 733 students, 363 (49.5%) were male, and the median/mean age at the first evaluation was 16.38 years (SD .50). The proportions of the bully group (the pure bully group and the bully-victim group) and the victim group( the pure victim group and the bully-victim group) were 27.0%( 198/733) and 37.8%( 277/733) respectively.  The proportions of four mutually exclusive group of bullying involvement were 53.9% ( the not-involved group), 19.1%( the pure victim group), 18.7%( the bully-victim group) and 8.3%( the pure bully group) respectively during the last six months( See figure 1.)
+```{r Figure 1., echo=FALSE, eval=TRUE, fig.height=10, fig.width=10}
+
+fig_1_revised
+```
+The frequency of bullying perpetration increased with the frequency of bullying victimization. The BIS of the pure bully group was significantly higher than the bully-victim group, which also has higher BIS than the victim group and the not-involved group with statistical significance. The tendency of higher BIS for more frequent bullying perpetration could also be noted when the bully group was subgrouped by different frequency of victimization. (figure 1)
+
+The detailed statistical summary and pairwise comparison among the categorical and numeric variables were listed according to various levels of bullying involvement(figure S1.1-S1.2) and frequency of bullying perpetration(figure S2.1-S2.2).The distributions of types of bullying involvement and sociodemographic variables, except gender( male: female 49.5% vs. 50.5%), were imbalanced( figure S1,1). 
+```{r, fig.height=10, fig.width=10}
+print(fig_s1_revised) 
+```
+
+The distribution  imbalance of variables necessitated the use of penalized likelihood-based method of logistic regression, such as Firth logistic regression, in the following multivariate analyses. Most participants had non-needy families and lived with their parents, while their parents were mostly employed. The correlations between variables, such as PHQ-9 and RSES, raised our concern for possible multilinearity in multivariate analyses of these variables. 
+```{r fig.height=10, fig.width=10, message=FALSE, warning=FALSE}
+fig_s1_2
+```
+
+#Univariate Analysis: Variables associated with different involvement of bullying perpetration
+
+In the univariate analysis, male, school ranking≦70, father’s unemployment,  smoking behavior, mild depression(scores of PHQ-9: 6 to 10,), problem drinkers( AUDIT-C ≥ 4), and higher impulsivity(higher scores of the BIS-11) were significantly associated with the bully group, the bully-victim group, and the frequent bully group, when compared with the noninvolved group. (see table 2.)  
+
+```{r , paged.print=TRUE}
+
+kable(cbind(table2$bullies[[1]], Bullies =table2$bullies[[2]],  Bully_victims=table2$bully_victims[[1]], Pure_Bullies= table2$pure_bullies[[1]], Frequent_bullies=table2$repeated_bullies[[1]]), caption = "Table 2.1 Unadjusted OR")
+```
+
+
+Figure S3 gives the distribution of the weight of evidence (WOE) and the information value (IV) of variables on bullying perpetration( the bully group vs. the noninvolved group). We can see 1. a nearly linear relationship between the BIS-11 scores and bullying perpetration. (see figure S3 B) and 2. higher IV of bullying victimization( 0.81) and BIS-11 scores( 0.23) on bullying perpetration.
+```{r fig.height=10, fig.width=10 }
+fig_s3_revised 
+```
+
+
+
+
+#Multivariate analysis: adjusted odds ratios of variables with different involvement of bullying perpetration
+
+After adjusted with gender and other significant sociodemographic factors, impulsivity( the scores of BIS-11) and problem drinker(AUDIT-C >=4) remained significantly correlated with different levels of bullying involvement across the comparisons with logistic regression( see table 2, Bullies: BIS-11: OR= 1.44( CI= 1.18-1.76, p< 0.001) AUDIT-C>=4: OR= 3.52( CI= 1.48-9.06, p< 0.01);  Pure Bullies: BIS-11: OR= 1.75( CI= 1.29-2.40, p< 0.001) AUDIT-C>=4: OR= 3.41( CI= 0.98-11.32, p< 0.05); Frequent Bullies: BIS-11: OR= 1.66( CI= 1.20-2.33, p< 0.01) AUDIT-C>=4: OR= 3.16( CI=1.12-8.05, p< 0.05); Bully-Victims: BIS-11: OR= 1.37( CI= 1.1-1.73,p< 0.05) AUDIT-C>=4: OR= 3.91( CI= 1.55-10.83, p< 0.01); reference group: the noninvolved group; see table 2). The logistic regression analyses also revealed that after adjusted with gender, school ranking and father’s employment status, lower social support and mild to moderate depression were significantly correlated with bullying perpetration.
+
+
+```{r Table 2, paged.print=F}
+kable(cbind( table2$bullies[1],Bullies =table2$bullies[,3],  Bully_victims=table2$bully_victims[,2], Pure_Bullies= table2$pure_bullies[,2], Frequent_bullies=table2$repeated_bullies[,2]), caption = "Table 2: Adjusted OR without penalized likelihood-based method"
+      )
+```
+
+
+However, after adjusted with the frequency of bullying victimization(see table 3; the reference group also changed to the non-bullying group), the significance of depression became marginal, while the effect size and p-value of the scores of BIS-11( OR= 1.67( CI= 1.35-2.07, p< 0.001)), the AUDIT-C( OR= 2.55( CI= 1.12-5.87, p< 0.05)) and the scores of RSES ( OR= 1.36( CI= 1.07-1.72, p< 0.05))remained significant. Notably, both the infrequent( “1-2 times” of bullying victimization) and frequent( >”1-2 times”) victimization were significantly correlated with the bully group( infrequent victimization: OR= 6.09( CI= 4.05-9.26, p< 0.001); frequent victimization: OR= 7.52( CI= 3.86-14.88, p< 0.001)) and the frequent bully group ( infrequent victimization: OR= 3.58( CI= 1.65-8.13, p< 0.01); frequent victimization: OR= 8.03( CI= 3.09-20.95, p< 0.001)).
+
+Table 2: Adjusted OR without penalized likelihood-based method
+```{r Table 3, paged.print=F}
+kable(cbind( table3$bullies[1],Bullies =table3$bullies[,3],Active_bullies=table3$act_bullies[,2], Frequent_bullies=table3$repeated_bullies[,2]), caption = "Table 3")
+```
+
+
+
+#Model performance assessment and validation.
+
+We examined the performance of Model 1(see table 3; the formula: bullying/no-bullying~ gender+ school ranking+ father’s employment status+ smoking status+ PHQ-9+ AUDIT-C+ RSES+ BIS-11) and Model 2( the formula: frequent bullying/not frequent bullying~ gender+ AUDIT-C+ RSES+ BIS-11). The predicted risks of bullying perpetration with Model 1 were closely fit for the observed risk( figure S5 ), while Model 2 provided insufficient information for samples with predicted risks > 0.4.
+
+Figure S5.1
+```{r fig.height=10, fig.width=10}
+plot_model_2
+```
+
+Figure S5.2
+```{r fig.height=10, fig.width=10}
+plot_model_2_rec
+```
+
+The AUC of Model 1 and Model 2 were 0.803( 95% CI: 0.769-0.839) and 0.789( 95% CI: 0.721-0.853), respectively, both of which were significantly better than the null model(simply predicting by the prevalence of bullying involvement; p< 2.2*10^-16). All the variance inflation factors( VIF) were below 2, lowering the concern about multicollinearity( table 3). We performed internal validation using 2000 bootstrap samples and found that Model 1 had a good discriminatory performance with a bootstrap-corrected AUC( C-statistic) of 0.787. This small difference between the optimistic and bootstrap-corrected C statistic and the resampling calibration plot suggested fair generalizability of Model 1. In contrast of Model 1, the performance and the generalizability of Model 2 were poor when the predicted probability exceeded 0.1 and was uncertain when the predicted probability was above 0.4. ( see figure S6). 
+
+
+The differences between model performances on the dataset with and without multiple imputations for the missing data were trivial.
+
+
+
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

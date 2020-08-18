@@ -1,6 +1,8 @@
 #figure 1
 
+
 selected_variables <- c("bully_inv", "bully_3group","victim_3group","firstyrvic2","rec_victim_firstyr",
+                        "bully_3group_act", "victim_3group_act",
                         "q68_a", "q3_a",
                         "AUDIT_C_a", "q31_0_a","q22_0_a", 
                         "firstrses", 

@@ -1,0 +1,10 @@
+"firstyrbully2","rec_bully_firstyr","firstyr_bully2_act"
+"Nagelkerke R2",0.303,0.182,0.362
+"Bootstrap-corrected Nagelkerke R2",0.266,0.145,0.322
+"AUC",0.8,0.787,0.824
+"Bootstrap-corrected AUC",0.784,0.765,0.807
+"Calibration-in-large",-0.063,-0.203,-0.092
+"ICI",0.019,0.007,0.019
+"E50",0.016,0.004,0.015
+"E90.90%",0.041,0.013,0.044
+"Emax",0.051,0.53,0.066

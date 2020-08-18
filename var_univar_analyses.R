@@ -36,14 +36,21 @@ var_univar_analyses <- function(ind_var, y="firstyrbully2", data_frame #=dataset
   #  }
 
 sorted <- sort_var(ind_var,data_frame = data_frame)
+cat_var <- sorted[[1]]
+num_var <- sorted[[2]]
+
 
 var_list<- data.frame(class_var=NULL, Var=NULL, level=NULL,OR.CI=NULL, p_value=NULL,star=NULL,dep_var=NULL)
 
+
+# Chi square test for categorical variables
 for(i in sorted[[1]]){
   
 var_arg <- list(i, y, data_frame)
   var_list <- rbind(  var_list,do.call(cat_var_tab, var_arg))
 }
+
+# t.test for numeric variables
 
 for(i in sorted[[2]]){
   
@@ -52,8 +59,6 @@ for(i in sorted[[2]]){
 }
 
 
-#cat_var_list <-   map2(sorted[[1]],y,cat_var_tab)
-#cat_var_df <- do.call(rbind, cat_var_list)
 
 
  return(var_list)

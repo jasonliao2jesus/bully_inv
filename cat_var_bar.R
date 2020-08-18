@@ -1,3 +1,5 @@
+
+
 cat_var_bar <- function(ind_var= "q3_a", 
                                   ind_var_name= NULL,
                                   ind_var_level= NULL,
@@ -33,19 +35,35 @@ ind_var1 <-  enquo(ind_varname)   # convert name to quosure/formula to be used b
 dep_var1 <-  enquo(dep_varname)
 
 cat_var <- ggplot(data)+  
-  geom_bar(aes(x= !!ind_var1, fill= fct_rev(!!dep_var1)), position= position) +
-  scale_fill_discrete( name = dep_var_name, 
-                       labels = dep_var_level)
+  geom_bar(aes(x= !!ind_var1, fill= fct_rev(!!dep_var1)), position= position) #+scale_fill_discrete( as.name(paste("name =", dep_var_name)), as.name(paste("level =", dep_var_level)))
 
+
+
+
+ifelse( is.null(dep_var_name)&is.null(dep_var_level),
+        cat_var <- cat_var, 
+        ifelse(is.null(dep_var_name)& !is.null(dep_var_level), 
+               cat_var <- cat_var+ scale_fill_discrete( labels = dep_var_level),
+               ifelse(!is.null(dep_var_name)& is.null(dep_var_level), 
+                      cat_var <- cat_var+ scale_fill_discrete( name = dep_var_name), 
+                      cat_var <- cat_var+ scale_fill_discrete( name = dep_var_name, labels= dep_var_level)
+               )
+               
+        )
+        
+)
 
 if( !is.null(ind_var_level) ){
   cat_var <- cat_var+ scale_x_discrete(labels=ind_var_level)
   
 }
+  
+
 
  if(!is.null(ind_var_name)){
     cat_var <- cat_var+ xlab(  ind_var_name)  
  }
+
 cat_var <- cat_var+
   geom_text(data=a, aes( x= !!ind_var1 , 
                          y= count,label=ifelse(count==0, "",n_count) ),
@@ -65,7 +83,7 @@ cat_var <- cat_var+
 
 if(!legend.present){
   cat_var <- cat_var+ theme(legend.position= "none")
-}
+ }
 
   
  
