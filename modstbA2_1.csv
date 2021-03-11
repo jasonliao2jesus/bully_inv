@@ -1,0 +1,401 @@
+"fmla","n","freq","cumulative_freq","AUC","Emax"
+"1","firstyrbully2 ~ victim_3group+ q5_a+ bis1_standardized",160,0.08,0.08,0.789,0.055
+"2","firstyrbully2 ~ victim_3group+ bis1_standardized",96,0.048,0.128,0.778,0.114
+"3","firstyrbully2 ~ victim_3group+ q5_a+ AUDIT_C_4_a+ bis1_standardized",73,0.0365,0.164,0.793,0.08
+"4","firstyrbully2 ~ victim_3group+ AUDIT_C_4_a+ bis1_standardized",52,0.026,0.19,0.783,0.044
+"5","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ bis1_standardized",50,0.025,0.216,0.793,0.067
+"6","firstyrbully2 ~ victim_3group+ q3_a+ bis1_standardized",49,0.0245,0.24,0.784,0.039
+"7","firstyrbully2 ~ victim_3group+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",49,0.0245,0.264,0.794,0.075
+"8","firstyrbully2 ~ victim_3group+ q5_a+ firstrses_standardized+ bis1_standardized",39,0.0195,0.284,0.79,0.043
+"9","firstyrbully2 ~ victim_3group+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",35,0.0175,0.302,0.784,0.037
+"10","firstyrbully2 ~ victim_3group+ q3_a+ AUDIT_C_4_a+ bis1_standardized",33,0.0165,0.318,0.788,0.115
+"11","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ bis1_standardized",27,0.0135,0.332,0.792,0.069
+"12","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ bis1_standardized",26,0.013,0.344,0.786,0.039
+"13","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ bis1_standardized",26,0.013,0.358,0.792,0.114
+"14","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ bis1_standardized",25,0.0125,0.37,0.795,0.071
+"15","firstyrbully2 ~ victim_3group+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",25,0.0125,0.382,0.796,0.02
+"16","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",22,0.011,0.394,0.796,0.094
+"17","firstyrbully2 ~ victim_3group+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",21,0.0105,0.404,0.796,0.078
+"18","firstyrbully2 ~ victim_3group+ firstrses_standardized+ bis1_standardized",19,0.0095,0.414,0.779,0.084
+"19","firstyrbully2 ~ victim_3group+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",19,0.0095,0.423,0.793,0.055
+"20","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ bis1_standardized",18,0.009,0.432,0.786,0.034
+"21","firstyrbully2 ~ victim_3group+ q8_a+ bis1_standardized",18,0.009,0.441,0.78,0.089
+"22","firstyrbully2 ~ victim_3group+ q5_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",17,0.0085,0.45,0.793,0.042
+"23","firstyrbully2 ~ victim_3group+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",16,0.008,0.458,0.788,0.04
+"24","firstyrbully2 ~ victim_3group+ q68_a+ bis1_standardized",16,0.008,0.466,0.781,0.065
+"25","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",16,0.008,0.474,0.794,0.083
+"26","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",16,0.008,0.482,0.796,0.088
+"27","firstyrbully2 ~ victim_3group+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",15,0.0075,0.489,0.787,0.038
+"28","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ bis1_standardized",15,0.0075,0.496,0.791,0.058
+"29","firstyrbully2 ~ victim_3group+ school_PR+ AUDIT_C_4_a+ bis1_standardized",15,0.0075,0.504,0.786,0.077
+"30","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",14,0.007,0.511,0.796,0.046
+"31","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ AUDIT_C_4_a+ bis1_standardized",14,0.007,0.518,0.798,0.098
+"32","firstyrbully2 ~ victim_3group+ school_PR+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",14,0.007,0.525,0.787,0.044
+"33","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",13,0.0065,0.532,0.799,0.021
+"34","firstyrbully2 ~ victim_3group+ school_PR+ bis1_standardized",13,0.0065,0.538,0.781,0.096
+"35","firstyrbully2 ~ victim_3group+ q22_0_a+ bis1_standardized",12,0.006,0.544,0.78,0.076
+"36","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",12,0.006,0.55,0.798,0.073
+"37","firstyrbully2 ~ victim_3group+ school_PR+ firstrses_standardized+ bis1_standardized",12,0.006,0.556,0.782,0.076
+"38","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ AUDIT_C_4_a+ bis1_standardized",12,0.006,0.562,0.795,0.095
+"39","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ firstrses_standardized+ bis1_standardized",12,0.006,0.568,0.793,0.045
+"40","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",12,0.006,0.574,0.799,0.029
+"41","firstyrbully2 ~ victim_3group+ q3_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",11,0.0055,0.58,0.792,0.03
+"42","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ AUDIT_C_4_a+ bis1_standardized",11,0.0055,0.585,0.79,0.101
+"43","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",11,0.0055,0.59,0.795,0.054
+"44","firstyrbully2 ~ victim_3group+ q3_a+ firstrses_standardized+ bis1_standardized",10,0.005,0.596,0.784,0.032
+"45","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",10,0.005,0.6,0.791,0.052
+"46","firstyrbully2 ~ victim_3group+ q5_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",9,0.0045,0.605,0.793,0.086
+"47","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",9,0.0045,0.61,0.799,0.078
+"48","firstyrbully2 ~ victim_3group+ q22_0_a+ firstrses_standardized+ bis1_standardized",8,0.004,0.614,0.783,0.057
+"49","firstyrbully2 ~ victim_3group+ q3_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",8,0.004,0.618,0.788,0.049
+"50","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ PHQ9_1yr_new+ bis1_standardized",8,0.004,0.622,0.794,0.048
+"51","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",8,0.004,0.626,0.796,0.042
+"52","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ bis1_standardized",8,0.004,0.63,0.789,0.035
+"53","firstyrbully2 ~ victim_3group+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",8,0.004,0.634,0.792,0.065
+"54","firstyrbully2 ~ victim_3group+ q5_a+ q22_0_a+ bis1_standardized",8,0.004,0.638,0.791,0.06
+"55","firstyrbully2 ~ victim_3group+ q8_a+ AUDIT_C_4_a+ bis1_standardized",8,0.004,0.642,0.785,0.056
+"56","firstyrbully2 ~ victim_3group+ q8_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",8,0.004,0.646,0.786,0.043
+"57","firstyrbully2 ~ victim_3group+ school_PR+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",8,0.004,0.65,0.788,0.041
+"58","firstyrbully2 ~ victim_3group+ school_PR+ q22_0_a+ firstrses_standardized+ bis1_standardized",8,0.004,0.654,0.785,0.07
+"59","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",8,0.004,0.658,0.794,0.041
+"60","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ bis1_standardized",8,0.004,0.662,0.794,0.064
+"61","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ firstrses_standardized+ bis1_standardized",7,0.0035,0.665,0.794,0.044
+"62","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ PHQ9_1yr_new+ bis1_standardized",7,0.0035,0.668,0.797,0.055
+"63","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ AUDIT_C_4_a+ bis1_standardized",7,0.0035,0.672,0.794,0.112
+"64","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ firstrses_standardized+ bis1_standardized",7,0.0035,0.676,0.792,0.101
+"65","firstyrbully2 ~ victim_3group+ school_PR+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",7,0.0035,0.679,0.787,0.111
+"66","firstyrbully2 ~ victim_3group+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",6,0.003,0.682,0.785,0.049
+"67","firstyrbully2 ~ victim_3group+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",6,0.003,0.685,0.783,0.105
+"68","firstyrbully2 ~ victim_3group+ q3_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",6,0.003,0.688,0.789,0.084
+"69","firstyrbully2 ~ victim_3group+ q3_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",6,0.003,0.691,0.79,0.06
+"70","firstyrbully2 ~ victim_3group+ q3_a+ PHQ9_1yr_new+ bis1_standardized",6,0.003,0.694,0.786,0.052
+"71","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ AUDIT_C_4_a+ bis1_standardized",6,0.003,0.697,0.79,0.124
+"72","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",6,0.003,0.7,0.799,0.065
+"73","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",6,0.003,0.703,0.802,0.031
+"74","firstyrbully2 ~ victim_3group+ q5_a+ PHQ9_1yr_new+ bis1_standardized",6,0.003,0.706,0.79,0.073
+"75","firstyrbully2 ~ victim_3group+ school_PR+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",6,0.003,0.709,0.791,0.04
+"76","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",6,0.003,0.712,0.797,0.085
+"77","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ q22_0_a+ bis1_standardized",6,0.003,0.715,0.793,0.072
+"78","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",5,0.0025,0.718,0.797,0.078
+"79","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",5,0.0025,0.72,0.797,0.042
+"80","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",5,0.0025,0.722,0.801,0.029
+"81","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ q22_0_a+ bis1_standardized",5,0.0025,0.725,0.796,0.075
+"82","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ PHQ9_1yr_new+ bis1_standardized",5,0.0025,0.728,0.789,0.078
+"83","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q5_a+ bis1_standardized",5,0.0025,0.73,0.794,0.081
+"84","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ PHQ9_1yr_new+ bis1_standardized",5,0.0025,0.732,0.788,0.049
+"85","firstyrbully2 ~ victim_3group+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",5,0.0025,0.735,0.799,0.035
+"86","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",5,0.0025,0.738,0.796,0.09
+"87","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ q22_0_a+ bis1_standardized",5,0.0025,0.74,0.792,0.061
+"88","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",5,0.0025,0.742,0.793,0.088
+"89","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",5,0.0025,0.745,0.794,0.087
+"90","firstyrbully2 ~ victim_3group+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",4,0.002,0.747,0.783,0.074
+"91","firstyrbully2 ~ victim_3group+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.749,0.791,0.04
+"92","firstyrbully2 ~ victim_3group+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.751,0.786,0.092
+"93","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ q22_0_a+ bis1_standardized",4,0.002,0.753,0.794,0.069
+"94","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ bis1_standardized",4,0.002,0.755,0.795,0.073
+"95","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ PHQ9_1yr_new+ bis1_standardized",4,0.002,0.757,0.796,0.061
+"96","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.759,0.794,0.04
+"97","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.761,0.798,0.043
+"98","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ bis1_standardized",4,0.002,0.763,0.787,0.042
+"99","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ bis1_standardized",4,0.002,0.765,0.797,0.081
+"100","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ bis1_standardized",4,0.002,0.767,0.799,0.058
+"101","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ AUDIT_C_4_a+ bis1_standardized",4,0.002,0.769,0.793,0.108
+"102","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.771,0.798,0.043
+"103","firstyrbully2 ~ victim_3group+ q5_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.773,0.795,0.05
+"104","firstyrbully2 ~ victim_3group+ q6_a+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.775,0.794,0.076
+"105","firstyrbully2 ~ victim_3group+ q68_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.777,0.782,0.047
+"106","firstyrbully2 ~ victim_3group+ q68_a+ q22_0_a+ bis1_standardized",4,0.002,0.779,0.782,0.069
+"107","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.781,0.801,0.048
+"108","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.783,0.795,0.047
+"109","firstyrbully2 ~ victim_3group+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.785,0.79,0.048
+"110","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ bis1_standardized",4,0.002,0.787,0.79,0.068
+"111","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ AUDIT_C_4_a+ bis1_standardized",4,0.002,0.789,0.787,0.062
+"112","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.791,0.798,0.079
+"113","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",4,0.002,0.793,0.804,0.054
+"114","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ bis1_standardized",4,0.002,0.795,0.784,0.082
+"115","firstyrbully2 ~ victim_3group+ q3_a+ q22_0_a+ bis1_standardized",3,0.0015,0.796,0.785,0.035
+"116","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",3,0.0015,0.798,0.797,0.099
+"117","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.8,0.796,0.034
+"118","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ q68_a+ bis1_standardized",3,0.0015,0.801,0.794,0.102
+"119","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q22_0_a+ bis1_standardized",3,0.0015,0.802,0.786,0.051
+"120","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",3,0.0015,0.804,0.799,0.049
+"121","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.806,0.803,0.039
+"122","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",3,0.0015,0.807,0.791,0.067
+"123","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",3,0.0015,0.808,0.792,0.059
+"124","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.81,0.799,0.076
+"125","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.812,0.796,0.034
+"126","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.813,0.8,0.065
+"127","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ q68_a+ bis1_standardized",3,0.0015,0.814,0.796,0.103
+"128","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",3,0.0015,0.816,0.794,0.063
+"129","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",3,0.0015,0.818,0.8,0.1
+"130","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",3,0.0015,0.819,0.801,0.055
+"131","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.82,0.803,0.022
+"132","firstyrbully2 ~ victim_3group+ q5_a",3,0.0015,0.822,0.741,0.115
+"133","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ PHQ9_1yr_new+ bis1_standardized",3,0.0015,0.824,0.792,0.063
+"134","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",3,0.0015,0.825,0.794,0.049
+"135","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.826,0.796,0.052
+"136","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ q22_0_a+ bis1_standardized",3,0.0015,0.828,0.793,0.096
+"137","firstyrbully2 ~ victim_3group+ q6_a+ AUDIT_C_4_a+ bis1_standardized",3,0.0015,0.83,0.783,0.042
+"138","firstyrbully2 ~ victim_3group+ q68_a+ AUDIT_C_4_a+ bis1_standardized",3,0.0015,0.831,0.784,0.07
+"139","firstyrbully2 ~ victim_3group+ q7_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",3,0.0015,0.832,0.786,0.058
+"140","firstyrbully2 ~ victim_3group+ q7_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.834,0.789,0.036
+"141","firstyrbully2 ~ victim_3group+ q7_a+ bis1_standardized",3,0.0015,0.836,0.779,0.083
+"142","firstyrbully2 ~ victim_3group+ q8_a+ PHQ9_1yr_new+ bis1_standardized",3,0.0015,0.837,0.782,0.168
+"143","firstyrbully2 ~ victim_3group+ school_PR+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.838,0.794,0.038
+"144","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",3,0.0015,0.84,0.795,0.08
+"145","firstyrbully2 ~ victim_3group+ school_PR+ q68_a+ bis1_standardized",3,0.0015,0.842,0.783,0.071
+"146","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ bis1_standardized",3,0.0015,0.843,0.783,0.072
+"147","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",3,0.0015,0.844,0.799,0.051
+"148","firstyrbully2 ~ victim_3group+ q3_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.846,0.795,0.037
+"149","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.846,0.798,0.07
+"150","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ q68_a+ q22_0_a+ bis1_standardized",2,0.001,0.848,0.795,0.089
+"151","firstyrbully2 ~ victim_3group+ q3_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",2,0.001,0.848,0.79,0.076
+"152","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ bis1_standardized",2,0.001,0.85,0.784,0.049
+"153","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ PHQ9_1yr_new+ q22_0_a+ bis1_standardized",2,0.001,0.85,0.788,0.071
+"154","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",2,0.001,0.852,0.798,0.099
+"155","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",2,0.001,0.852,0.799,0.111
+"156","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",2,0.001,0.854,0.798,0.061
+"157","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.854,0.797,0.037
+"158","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.856,0.799,0.029
+"159","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q6_a+ q5_a+ bis1_standardized",2,0.001,0.856,0.794,0.086
+"160","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q68_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",2,0.001,0.858,0.791,0.044
+"161","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",2,0.001,0.858,0.8,0.054
+"162","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.86,0.791,0.074
+"163","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ firstrses_standardized+ bis1_standardized",2,0.001,0.86,0.787,0.04
+"164","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.862,0.793,0.049
+"165","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q22_0_a+ bis1_standardized",2,0.001,0.862,0.787,0.04
+"166","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",2,0.001,0.864,0.799,0.096
+"167","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.864,0.803,0.023
+"168","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ PHQ9_1yr_new+ q22_0_a+ bis1_standardized",2,0.001,0.866,0.796,0.044
+"169","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q68_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.866,0.791,0.081
+"170","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.868,0.798,0.039
+"171","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.868,0.805,0.023
+"172","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",2,0.001,0.87,0.8,0.058
+"173","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ q68_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",2,0.001,0.87,0.8,0.035
+"174","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.872,0.79,0.035
+"175","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",2,0.001,0.872,0.793,0.08
+"176","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",2,0.001,0.874,0.799,0.11
+"177","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q5_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.874,0.796,0.046
+"178","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ bis1_standardized",2,0.001,0.876,0.791,0.032
+"179","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.876,0.792,0.034
+"180","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.878,0.805,0.028
+"181","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.879,0.797,0.047
+"182","firstyrbully2 ~ victim_3group+ q7_a+ AUDIT_C_4_a+ bis1_standardized",2,0.001,0.88,0.784,0.056
+"183","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.881,0.792,0.046
+"184","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ q68_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.882,0.798,0.046
+"185","firstyrbully2 ~ victim_3group+ q7_a+ q6_a+ q5_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.883,0.795,0.046
+"186","firstyrbully2 ~ victim_3group+ q8_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",2,0.001,0.884,0.787,0.05
+"187","firstyrbully2 ~ victim_3group+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",2,0.001,0.885,0.785,0.092
+"188","firstyrbully2 ~ victim_3group+ q8_a+ q22_0_a+ bis1_standardized",2,0.001,0.886,0.783,0.078
+"189","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.886,0.8,0.045
+"190","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ q68_a+ bis1_standardized",2,0.001,0.888,0.793,0.113
+"191","firstyrbully2 ~ victim_3group+ q8_a+ q68_a+ PHQ9_1yr_new+ bis1_standardized",2,0.001,0.888,0.784,0.1
+"192","firstyrbully2 ~ victim_3group+ q8_a+ q7_a+ q22_0_a+ bis1_standardized",2,0.001,0.89,0.785,0.065
+"193","firstyrbully2 ~ victim_3group+ school_PR+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.89,0.789,0.1
+"194","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",2,0.001,0.892,0.796,0.097
+"195","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.892,0.802,0.051
+"196","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.894,0.797,0.049
+"197","firstyrbully2 ~ victim_3group+ school_PR+ q6_a+ bis1_standardized",2,0.001,0.894,0.782,0.095
+"198","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.896,0.796,0.037
+"199","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",2,0.001,0.896,0.797,0.095
+"200","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.898,0.8,0.074
+"201","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ q68_a+ bis1_standardized",2,0.001,0.898,0.795,0.117
+"202","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.9,0.795,0.037
+"203","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",2,0.001,0.9,0.791,0.136
+"204","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",2,0.001,0.902,0.796,0.099
+"205","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q7_a+ AUDIT_C_4_a+ bis1_standardized",2,0.001,0.902,0.791,0.053
+"206","firstyrbully2 ~ victim_3group",1,5e-04,0.903,0.721,0
+"207","firstyrbully2 ~ victim_3group+ AUDIT_C_4_a",1,5e-04,0.904,0.736,0.144
+"208","firstyrbully2 ~ victim_3group+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.904,0.786,0.066
+"209","firstyrbully2 ~ victim_3group+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.904,0.779,0.171
+"210","firstyrbully2 ~ victim_3group+ q3_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.905,0.791,0.061
+"211","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.906,0.798,0.047
+"212","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.906,0.797,0.047
+"213","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.906,0.797,0.066
+"214","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ q68_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.907,0.795,0.04
+"215","firstyrbully2 ~ victim_3group+ q3_a+ q5_a+ q68_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.908,0.796,0.043
+"216","firstyrbully2 ~ victim_3group+ q3_a+ q6_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.908,0.788,0.116
+"217","firstyrbully2 ~ victim_3group+ q3_a+ q6_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.908,0.789,0.09
+"218","firstyrbully2 ~ victim_3group+ q3_a+ q6_a+ PHQ9_1yr_new+ q22_0_a+ bis1_standardized",1,5e-04,0.909,0.787,0.051
+"219","firstyrbully2 ~ victim_3group+ q3_a+ q6_a+ q5_a+ bis1_standardized",1,5e-04,0.91,0.793,0.072
+"220","firstyrbully2 ~ victim_3group+ q3_a+ q6_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.91,0.798,0.048
+"221","firstyrbully2 ~ victim_3group+ q3_a+ q68_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.91,0.788,0.132
+"222","firstyrbully2 ~ victim_3group+ q3_a+ q68_a+ bis1_standardized",1,5e-04,0.911,0.785,0.077
+"223","firstyrbully2 ~ victim_3group+ q3_a+ q68_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.912,0.787,0.045
+"224","firstyrbully2 ~ victim_3group+ q3_a+ q68_a+ q22_0_a+ bis1_standardized",1,5e-04,0.912,0.786,0.062
+"225","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.912,0.789,0.127
+"226","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.913,0.79,0.094
+"227","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.914,0.79,0.129
+"228","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.914,0.788,0.051
+"229","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.914,0.799,0.084
+"230","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.915,0.801,0.076
+"231","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.916,0.801,0.026
+"232","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.916,0.8,0.064
+"233","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.916,0.799,0.064
+"234","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ q68_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.917,0.799,0.125
+"235","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ q68_a+ bis1_standardized",1,5e-04,0.918,0.796,0.105
+"236","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.918,0.803,0.048
+"237","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ q68_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.918,0.796,0.045
+"238","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q5_a+ q68_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.919,0.798,0.044
+"239","firstyrbully2 ~ victim_3group+ q3_a+ q7_a+ q6_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.92,0.792,0.079
+"240","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ AUDIT_C_4_a",1,5e-04,0.92,0.758,0.155
+"241","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.92,0.79,0.094
+"242","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.921,0.792,0.115
+"243","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.922,0.786,0.033
+"244","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.922,0.792,0.047
+"245","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q22_0_a+ bis1_standardized",1,5e-04,0.922,0.788,0.034
+"246","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.923,0.799,0.085
+"247","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q5_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.924,0.794,0.062
+"248","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.924,0.797,0.046
+"249","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q5_a+ q68_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.924,0.798,0.046
+"250","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q6_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.925,0.792,0.119
+"251","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.926,0.793,0.048
+"252","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q7_a+ bis1_standardized",1,5e-04,0.926,0.788,0.037
+"253","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q7_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.926,0.792,0.07
+"254","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q7_a+ q22_0_a+ bis1_standardized",1,5e-04,0.927,0.789,0.039
+"255","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q7_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.928,0.799,0.112
+"256","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q7_a+ q5_a+ bis1_standardized",1,5e-04,0.928,0.796,0.092
+"257","firstyrbully2 ~ victim_3group+ q3_a+ q8_a+ q7_a+ q6_a+ q5_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.928,0.798,0.063
+"258","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.929,0.8,0.057
+"259","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ q22_0_a+ bis1_standardized",1,5e-04,0.93,0.796,0.066
+"260","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.93,0.797,0.029
+"261","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ q68_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.93,0.799,0.087
+"262","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.931,0.802,0.031
+"263","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q6_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.932,0.79,0.104
+"264","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q6_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.932,0.791,0.079
+"265","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q6_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.932,0.791,0.051
+"266","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q6_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.933,0.798,0.099
+"267","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q6_a+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.934,0.799,0.08
+"268","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q6_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.934,0.8,0.065
+"269","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q6_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.934,0.803,0.023
+"270","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q68_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.935,0.79,0.108
+"271","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.936,0.789,0.037
+"272","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.936,0.796,0.042
+"273","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.936,0.789,0.054
+"274","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q22_0_a+ bis1_standardized",1,5e-04,0.937,0.788,0.035
+"275","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.938,0.801,0.09
+"276","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.938,0.803,0.057
+"277","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.938,0.801,0.056
+"278","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.939,0.802,0.057
+"279","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.94,0.799,0.036
+"280","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q5_a+ q68_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.94,0.801,0.106
+"281","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q6_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.94,0.789,0.035
+"282","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q6_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.941,0.8,0.103
+"283","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q6_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.942,0.803,0.022
+"284","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q7_a+ q68_a+ bis1_standardized",1,5e-04,0.942,0.788,0.076
+"285","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.942,0.793,0.088
+"286","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a",1,5e-04,0.943,0.775,0.142
+"287","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.944,0.791,0.089
+"288","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.944,0.795,0.08
+"289","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q22_0_a+ bis1_standardized",1,5e-04,0.944,0.79,0.036
+"290","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.945,0.8,0.068
+"291","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q68_a+ bis1_standardized",1,5e-04,0.946,0.79,0.059
+"292","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.946,0.795,0.112
+"293","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ PHQ9_1yr_new+ q22_0_a+ bis1_standardized",1,5e-04,0.946,0.793,0.064
+"294","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.947,0.796,0.084
+"295","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.948,0.801,0.108
+"296","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ q5_a+ bis1_standardized",1,5e-04,0.948,0.798,0.094
+"297","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.948,0.802,0.05
+"298","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ q5_a+ q22_0_a+ bis1_standardized",1,5e-04,0.949,0.799,0.079
+"299","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.95,0.806,0.031
+"300","firstyrbully2 ~ victim_3group+ q3_a+ school_PR+ q8_a+ q7_a+ q6_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.95,0.795,0.073
+"301","firstyrbully2 ~ victim_3group+ q5_a+ AUDIT_C_4_a",1,5e-04,0.95,0.752,0.135
+"302","firstyrbully2 ~ victim_3group+ q5_a+ q68_a",1,5e-04,0.951,0.747,0.35
+"303","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ AUDIT_C_4_a",1,5e-04,0.952,0.755,0.245
+"304","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.952,0.794,0.111
+"305","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.952,0.794,0.07
+"306","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.953,0.795,0.082
+"307","firstyrbully2 ~ victim_3group+ q5_a+ q68_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.954,0.794,0.065
+"308","firstyrbully2 ~ victim_3group+ q6_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.954,0.788,0.04
+"309","firstyrbully2 ~ victim_3group+ q6_a+ q5_a+ bis1_standardized",1,5e-04,0.954,0.79,0.055
+"310","firstyrbully2 ~ victim_3group+ q6_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.955,0.796,0.021
+"311","firstyrbully2 ~ victim_3group+ q6_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.956,0.799,0.029
+"312","firstyrbully2 ~ victim_3group+ q6_a+ q5_a+ q68_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.956,0.792,0.104
+"313","firstyrbully2 ~ victim_3group+ q6_a+ q68_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.956,0.782,0.085
+"314","firstyrbully2 ~ victim_3group+ q6_a+ q68_a+ q22_0_a+ bis1_standardized",1,5e-04,0.957,0.782,0.069
+"315","firstyrbully2 ~ victim_3group+ q68_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.958,0.786,0.064
+"316","firstyrbully2 ~ victim_3group+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.958,0.788,0.049
+"317","firstyrbully2 ~ victim_3group+ q68_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.958,0.787,0.051
+"318","firstyrbully2 ~ victim_3group+ q7_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.959,0.786,0.038
+"319","firstyrbully2 ~ victim_3group+ q7_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.96,0.78,0.078
+"320","firstyrbully2 ~ victim_3group+ q7_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.96,0.784,0.074
+"321","firstyrbully2 ~ victim_3group+ q7_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.96,0.788,0.049
+"322","firstyrbully2 ~ victim_3group+ q7_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.961,0.792,0.047
+"323","firstyrbully2 ~ victim_3group+ q7_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.962,0.779,0.141
+"324","firstyrbully2 ~ victim_3group+ q7_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.962,0.786,0.091
+"325","firstyrbully2 ~ victim_3group+ q7_a+ q22_0_a+ bis1_standardized",1,5e-04,0.962,0.782,0.073
+"326","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.963,0.798,0.026
+"327","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.964,0.791,0.075
+"328","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.964,0.794,0.061
+"329","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ q68_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.964,0.795,0.11
+"330","firstyrbully2 ~ victim_3group+ q7_a+ q5_a+ q68_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.965,0.793,0.058
+"331","firstyrbully2 ~ victim_3group+ q7_a+ q6_a+ q5_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.966,0.794,0.082
+"332","firstyrbully2 ~ victim_3group+ q7_a+ q6_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.966,0.799,0.077
+"333","firstyrbully2 ~ victim_3group+ q7_a+ q6_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.966,0.801,0.04
+"334","firstyrbully2 ~ victim_3group+ q8_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.967,0.79,0.045
+"335","firstyrbully2 ~ victim_3group+ q8_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.968,0.782,0.099
+"336","firstyrbully2 ~ victim_3group+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.968,0.788,0.08
+"337","firstyrbully2 ~ victim_3group+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.968,0.793,0.044
+"338","firstyrbully2 ~ victim_3group+ q8_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.969,0.786,0.144
+"339","firstyrbully2 ~ victim_3group+ q8_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.97,0.785,0.083
+"340","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.97,0.794,0.093
+"341","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.97,0.797,0.087
+"342","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.971,0.791,0.052
+"343","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.972,0.791,0.078
+"344","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.972,0.796,0.054
+"345","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ q68_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.972,0.793,0.1
+"346","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ q68_a+ q22_0_a+ bis1_standardized",1,5e-04,0.973,0.793,0.093
+"347","firstyrbully2 ~ victim_3group+ q8_a+ q5_a+ q68_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.974,0.795,0.064
+"348","firstyrbully2 ~ victim_3group+ q8_a+ q6_a+ bis1_standardized",1,5e-04,0.974,0.781,0.087
+"349","firstyrbully2 ~ victim_3group+ q8_a+ q6_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.974,0.79,0.048
+"350","firstyrbully2 ~ victim_3group+ q8_a+ q68_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.975,0.787,0.08
+"351","firstyrbully2 ~ victim_3group+ q8_a+ q68_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.976,0.788,0.073
+"352","firstyrbully2 ~ victim_3group+ q8_a+ q68_a+ bis1_standardized",1,5e-04,0.976,0.783,0.082
+"353","firstyrbully2 ~ victim_3group+ q8_a+ q7_a+ bis1_standardized",1,5e-04,0.976,0.782,0.076
+"354","firstyrbully2 ~ victim_3group+ q8_a+ q7_a+ PHQ9_1yr_new+ q22_0_a+ bis1_standardized",1,5e-04,0.977,0.786,0.134
+"355","firstyrbully2 ~ victim_3group+ q8_a+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.978,0.802,0.057
+"356","firstyrbully2 ~ victim_3group+ q8_a+ q7_a+ q6_a+ bis1_standardized",1,5e-04,0.978,0.782,0.073
+"357","firstyrbully2 ~ victim_3group+ school_PR+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.978,0.786,0.089
+"358","firstyrbully2 ~ victim_3group+ school_PR+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.979,0.783,0.136
+"359","firstyrbully2 ~ victim_3group+ school_PR+ q22_0_a+ bis1_standardized",1,5e-04,0.98,0.783,0.072
+"360","firstyrbully2 ~ victim_3group+ school_PR+ q5_a",1,5e-04,0.98,0.762,0.228
+"361","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ q68_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.98,0.798,0.099
+"362","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ q68_a+ bis1_standardized",1,5e-04,0.981,0.793,0.121
+"363","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ q68_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.982,0.794,0.089
+"364","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.982,0.796,0.081
+"365","firstyrbully2 ~ victim_3group+ school_PR+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.982,0.8,0.047
+"366","firstyrbully2 ~ victim_3group+ school_PR+ q6_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.983,0.786,0.076
+"367","firstyrbully2 ~ victim_3group+ school_PR+ q6_a+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.984,0.796,0.088
+"368","firstyrbully2 ~ victim_3group+ school_PR+ q6_a+ q5_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.984,0.793,0.044
+"369","firstyrbully2 ~ victim_3group+ school_PR+ q6_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.984,0.802,0.045
+"370","firstyrbully2 ~ victim_3group+ school_PR+ q6_a+ q5_a+ q22_0_a+ bis1_standardized",1,5e-04,0.985,0.793,0.073
+"371","firstyrbully2 ~ victim_3group+ school_PR+ q68_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.986,0.786,0.081
+"372","firstyrbully2 ~ victim_3group+ school_PR+ q68_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.986,0.787,0.054
+"373","firstyrbully2 ~ victim_3group+ school_PR+ q68_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.986,0.784,0.048
+"374","firstyrbully2 ~ victim_3group+ school_PR+ q68_a+ q22_0_a+ bis1_standardized",1,5e-04,0.987,0.784,0.065
+"375","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.988,0.788,0.104
+"376","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.988,0.787,0.072
+"377","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.988,0.794,0.043
+"378","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.989,0.797,0.075
+"379","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ bis1_standardized",1,5e-04,0.99,0.794,0.092
+"380","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.99,0.797,0.052
+"381","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ q22_0_a+ bis1_standardized",1,5e-04,0.99,0.795,0.067
+"382","firstyrbully2 ~ victim_3group+ school_PR+ q7_a+ q5_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.991,0.796,0.044
+"383","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.992,0.788,0.069
+"384","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.992,0.789,0.044
+"385","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.992,0.793,0.039
+"386","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ PHQ9_1yr_new+ firstrses_standardized+ bis1_standardized",1,5e-04,0.993,0.789,0.145
+"387","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q5_a+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.994,0.797,0.096
+"388","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q5_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.994,0.794,0.054
+"389","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.994,0.8,0.036
+"390","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q5_a+ q68_a+ bis1_standardized",1,5e-04,0.995,0.794,0.119
+"391","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q6_a+ PHQ9_1yr_new+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.996,0.791,0.136
+"392","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q68_a+ AUDIT_C_4_a+ bis1_standardized",1,5e-04,0.996,0.789,0.076
+"393","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q68_a+ bis1_standardized",1,5e-04,0.996,0.785,0.085
+"394","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q7_a+ bis1_standardized",1,5e-04,0.997,0.786,0.073
+"395","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q7_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.998,0.794,0.033
+"396","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q7_a+ q5_a+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.998,0.8,0.082
+"397","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q7_a+ q5_a+ firstrses_standardized+ bis1_standardized",1,5e-04,0.998,0.795,0.051
+"398","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q7_a+ q5_a+ q68_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ bis1_standardized",1,5e-04,0.999,0.8,0.078
+"399","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q7_a+ q6_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ firstrses_standardized+ bis1_standardized",1,5e-04,1,0.802,0.045
+"400","firstyrbully2 ~ victim_3group+ school_PR+ q8_a+ q7_a+ q6_a+ q5_a+ PHQ9_1yr_new+ AUDIT_C_4_a+ q22_0_a+ firstrses_standardized+ bis1_standardized",1,5e-04,1,0.804,0.049

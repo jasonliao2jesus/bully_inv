@@ -178,6 +178,13 @@ dataset_sec_yr$rec_victim_physical_secyr <- factor(dataset_sec_yr$rec_victim_phy
 dataset_sec_yr$rec_victim_verbal_secyr <- factor(dataset_sec_yr$rec_victim_verbal_secyr, levels= c("no", "yes"))
 dataset_sec_yr$rec_victim_relational_secyr <- factor(dataset_sec_yr$rec_victim_relational_secyr, levels= c("no", "yes"))
 
+dataset_sec_yr <- 
+  mutate(dataset_sec_yr, victim_3group_rel_sec= ifelse(rec_victim_relational_secyr=="yes","v2_repeated_being_bullied",
+                                                      ifelse(relationalvictim_sec=="¦³", "v1_1or2_times","v0_not_being_bullied")
+  )
+  ) 
+dataset_sec_yr$victim_3group_rel_sec <- factor(dataset_sec_yr$victim_3group_rel_sec, levels=c( "v0_not_being_bullied", "v1_1or2_times", "v2_repeated_being_bullied"))
+
 
 
 dataset_sec_yr<- mutate(dataset_sec_yr, secyr_rec_bv= ifelse(rec_victim_secyr=="yes"& rec_bully_secyr=="yes", "yes", "no"))
@@ -550,7 +557,7 @@ testing_variables2 <- c(
   "secyr_bully2" ,"secyr_vic2", "secyr_pureb", "secyr_purev","secyr_bv", "secyr_bully2_act",
   "physicalbully_sec", "verbalbully_sec", "relationalbully_sec", "otherbully_sec",
   "physicalvictim_sec", "verbalvictim_sec", "relationalvictim_sec",  
-  "victim_3group_act_2",
+  "victim_3group_act_2","victim_3group_rel_sec",
   #"physicalb_3group","verbalb_3group","relationalb_3group",
   
   
@@ -574,7 +581,7 @@ dataset_sec_yr_testing<- dataset_sec_yr_testing%>% dplyr::rename(
   "physicalbully"="physicalbully_sec", "verbalbully"="verbalbully_sec", "relationalbully"="relationalbully_sec", "otherbully"="otherbully_sec",
   "physicalvictim"="physicalvictim_sec", "verbalvictim"="verbalvictim_sec", "relationalvictim"="relationalvictim_sec", 
   "firstyr_bully2_act"="secyr_bully2_act",
-  "victim_3group_act"= "victim_3group_act_2",
+  "victim_3group_act"= "victim_3group_act_2","victim_3group_rel"="victim_3group_rel_sec",
   
   
   "q3_a"="q3_b","q4_a"="q4_b","q5_a"="q5_b","q6_a"="q6_b","q7_a"="q7_b","q8_a"="q8_b", "q10_a"="q10_b", "school_PR"="school_PR","q22_a"="q22_b",

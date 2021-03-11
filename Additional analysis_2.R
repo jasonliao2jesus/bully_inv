@@ -68,7 +68,7 @@ model_1 <-  glm(formula = firstyrbully2 ~ 1,
                 )
 
 # model 2: p<0.05
-model_2 <- glm(formula = firstyrbully2 ~ victim_3group+
+model_2 <- glm(formula = firstyrbully2 ~ victim_3group_act+
                  q3_a + 
                  q5_a+
                  q68_a+
@@ -76,8 +76,9 @@ model_2 <- glm(formula = firstyrbully2 ~ victim_3group+
                  AUDIT_C_4_a+ 
               
                 bis1_standardized, 
-              family = binomial(),data =  dataset_selected_imp #%>%filter(!is.na(q5_a))
+              family = binomial(),data =  dataset_selected_imp, x=TRUE #%>%filter(!is.na(q5_a))
               )
+
 
 
               
@@ -130,6 +131,16 @@ pred2<-data.frame(predicted_pro_2)
 data1<-cbind(dataset_selected_imp, cbind( pred2))
 roc2 <- roc(data1$firstyrbully_1or0, data1$predicted_pro_2)
 
+# model 2: p<0.05
+model_2r <- glm(formula = firstyrbully2 ~ victim_3group+ q5_a+
+                  bis1_standardized, 
+                family = binomial(),data =  dataset_selected_imp, x=TRUE #%>%filter(!is.na(q5_a))
+                )
+model=model_2r
+predicted_pro_2 <- predict(model, newdata=dataset_selected_imp, type = "response")
+pred2<-data.frame(predicted_pro_2)
+data1<-cbind(dataset_selected_imp, cbind( pred2))
+roc2r <- roc(data1$firstyrbully_1or0, data1$predicted_pro_2)
 
 
 # calibration
@@ -305,11 +316,13 @@ ci.auc(roc5, method="delong")
 ci.auc(roc21, method="delong")
 
 
-r=c(0.34, 0.3, 0.38)
+r=c(0.25, 0.21, 0.29)
 round(exp((2*r*pi/sqrt(1-r^2))/sqrt(3)), digits = 2)
 
 d=c(0.0139, 0.3, 0.38)
 round(exp((d*pi/sqrt(3)), digits = 2))
+
+dataset$relation
 
 #下面是 Validation跟Resampling calibration，尚未寫成文章
 
@@ -327,7 +340,7 @@ model_2 <- lrm( firstyrbully2 ~ victim_3group+
 model_3 <- lrm( firstyrbully2 ~ victim_3group+q3_a +q5_a+ school_PR+
                  PHQ9_1yr_new+ AUDIT_C_4_a+ 
                  bis1_standardized, model = T, 
-                x=TRUE, y=TRUE, data =  dataset)
+                x=TRUE, y=TRUE, data =  dataset_selected_imp)
 
 #model 4: 去掉PHQ9
 model_4 <- lrm(firstyrbully2 ~ victim_3group+q3_a +q5_a+ AUDIT_C_4_a+
@@ -352,7 +365,7 @@ model_21 <- lrm(firstyr_bully2_act ~ victim_3group_act+
 
 model_2_rec <- lrm( rec_bully_firstyr ~ victim_3group+q3_a +  AUDIT_C_4_a+ 
                       bis1_standardized, model = T,  
-                    x=TRUE, y=TRUE, data =  model2.imp$data)
+                    x=TRUE, y=TRUE, data =  model2$data)
 
 
 
@@ -371,7 +384,7 @@ set.seed(1)
 #validate(model_2, xval=10, B=40)
 
 set.seed(1)
-a <- validate(model_2, B=200) 
+k <- validate(model_2, B=10, method= "crossvalidation") 
 cal <- calibrate(model_2, method="boot", B=200) # usually B=200 or 300
 plot(cal)
 
@@ -379,23 +392,22 @@ set.seed(2)
 a_rec <- validate(model_2_rec, B=200)  
 cal_rec <- calibrate(model_2_rec, method="boot", B=200) # usually B=200 or 300
 plot(cal_rec)
+calibrate
 
 
 
-
-cal_risk <- function( sex="男",school_level=1,father_job="沒有", 
-                      smoking="否", PHQ9_level=1, AUDIT_C_4="<4",
-                      MDSS= 20,
-                      victim_3group_level= 1, firstrses_standardized=25, bis1_standardized=0  ,model=model_2, data=dataset)
+cal_risk <- function( victim_3group_act_level=1, victim_3group_rel_level= 1, 
+                      victim_3group_level= 1, firstrses_standardized=25, bis1_standardized=0  ,model=model1.s$model$GLM, data=dataset)
 {
   
   
-  data_test <- data.frame(q3_a= sex, school_PR=levels(data$school_PR)[[school_level]], q5_a= father_job, 
-             q68_a= smoking, PHQ9_1yr_new= levels(data$PHQ9_1yr_new)[[PHQ9_level]], AUDIT_C_4_a=  AUDIT_C_4,
-             q22_0_a= MDSS,
-             victim_3group=  levels(data$victim_3group)[[victim_3group_level]], firstrses_standardized=firstrses_standardized, bis1_standardized=bis1_standardized)
+  data_test <- data.frame(
+             victim_3group_act= levels(data$victim_3group_act)[[victim_3group_act_level]],
+             victim_3group_rel= levels(data$victim_3group_rel)[[victim_3group_rel_level]],
+             victim_3group=  levels(data$victim_3group)[[victim_3group_level]],
+            bis1_standardized=bis1_standardized)
   
-  predict(model,data_test, type="response")
+  predict(model,newdata= data_test, type="response")
   
   
 }

@@ -8,7 +8,7 @@ vars_vector_victim_act<-c("victim_3group_act","q3_a","school_PR","q8_a","q7_a","
                       "q68_a","PHQ9_1yr_new","AUDIT_C_4_a",
                       "q22_0_a", "firstrses_standardized","bis1_standardized")
 vars_vector<-c("q3_a","school_PR","q8_a","q7_a","q6_a","q5_a", #"q5.a",
-                      "q68_a","PHQ9_1yr_new","AUDIT_C_4_a",
+                     # "q68_a",#"PHQ9_1yr_new","AUDIT_C_4_a",
                       "q22_0_a", "firstrses_standardized","bis1_standardized")
 # setting working data frames : 
 #  goal: comparison group= non-involved group 
@@ -32,15 +32,86 @@ dataset_table3_rec<-datat2%>%filter(firstyrpureb=="µL")
 #create arguments for all comparison(bullies vs. non-involved; victims vs non-involved;... etc.  )
 
 
-firstyrbully2_arg <-list(ind_var=vars_vector, dep_var = "firstyrbully2", dataset_table2)
-firstyrvic2_arg <- list(ind_var=vars_vector, dep_var = "firstyrvic2", dataset_table3)
-bv_arg <- list(ind_var=vars_vector, dep_var = "firstyrbv", dataset_bv_vs_noninvolved)
-pureb_arg <- list(ind_var=vars_vector, dep_var = "firstyrbully2", dataset_pureb)
-purev_arg <- list(ind_var=vars_vector, dep_var = "firstyrvic2", dataset_purev)
-rec_b_arg <- list(ind_var=vars_vector, dep_var = "rec_bully_firstyr", dataset_table2_rec)
-rec_v_arg <- list(ind_var=vars_vector, dep_var = "rec_victim_firstyr", dataset_table3_rec)
+firstyrbully2_arg <-list(ind_var=vars_vector, dep_var = "firstyrbully2", data= dataset_table2,  imputation.mis.data=imputation,
+                         span=span, group=group,
+                         validate.boot40= validate.boot40, 
+                         val.B=val.B, 
+                         confusion.matrix= confusion.matrix,
+                         cut.off=cut.off,
+                         p.threshhold= p.threshhold, 
+                         correct= correct)
+firstyrvic2_arg <- list(ind_var=vars_vector, dep_var = "firstyrvic2",data= dataset_table3,  imputation.mis.data=imputation,
+                        span=span, group=group,
+                        validate.boot40= validate.boot40, 
+                        val.B=val.B, 
+                        confusion.matrix= confusion.matrix,
+                        cut.off=cut.off,
+                        p.threshhold= p.threshhold, 
+                        correct= correct)
+bv_arg <- list(ind_var=vars_vector, dep_var = "firstyrbv", data=dataset_bv_vs_noninvolved,  imputation.mis.data=imputation,
+               span=span, group=group,
+               validate.boot40= validate.boot40, 
+               val.B=val.B, 
+               confusion.matrix= confusion.matrix,
+               cut.off=cut.off,
+               p.threshhold= p.threshhold, 
+               correct= correct)
+dataset$physica
+pureb_arg <- list(ind_var=vars_vector, dep_var = "firstyrbully2", data=dataset_pureb,  imputation.mis.data=imputation,
+                  span=span, group=group,
+                  validate.boot40= validate.boot40, 
+                  val.B=val.B, 
+                  confusion.matrix= confusion.matrix,
+                  cut.off=cut.off,
+                  p.threshhold= p.threshhold, 
+                  correct= correct)
+purev_arg <- list(ind_var=vars_vector, dep_var = "firstyrvic2", data=dataset_purev,  imputation.mis.data=imputation,
+                  span=span, group=group,
+                  validate.boot40= validate.boot40, 
+                  val.B=val.B, 
+                  confusion.matrix= confusion.matrix,
+                  cut.off=cut.off,
+                  p.threshhold= p.threshhold, 
+                  correct= correct)
+rec_b_arg <- list(ind_var=vars_vector, dep_var = "rec_bully_firstyr",data= dataset_table2_rec,  imputation.mis.data=imputation,
+                  span=span, group=group,
+                  validate.boot40= validate.boot40, 
+                  val.B=val.B, 
+                  confusion.matrix= confusion.matrix,
+                  cut.off=cut.off,
+                  p.threshhold= p.threshhold, 
+                  correct= correct)
+rec_v_arg <- list(ind_var=vars_vector, dep_var = "rec_victim_firstyr",data= dataset_table3_rec,  imputation.mis.data=imputation,
+                  span=span, group=group,
+                  validate.boot40= validate.boot40, 
+                  val.B=val.B, 
+                  confusion.matrix= confusion.matrix,
+                  cut.off=cut.off,
+                  p.threshhold= p.threshhold, 
+                  correct= correct)
 
+modb <- do.call(mypaper, firstyrbully2_arg)
+modv<- do.call(mypaper, firstyrvic2_arg)
+modbv <- do.call(mypaper, bv_arg)
+modpb <- do.call(mypaper, pureb_arg)
+modpv <- do.call(mypaper, purev_arg)
+modrb <-  do.call(mypaper,rec_b_arg)
+modrv <-  do.call(mypaper,rec_v_arg)
 
+sumb <- summary(modb)
+sumv <- summary(modv)
+sumbv <- summary(modbv)
+sumpb <- summary(modpb)
+sumpv <- summary(modpv)
+sumrb <- summary(modrb)
+
+table2 <-  list(bullies= sumb[,c(1,2,3)],
+                victims= sumv[,c(2,3)],
+                bully_victims= sumbv[,c(2,3)],
+                pure_bullies= sumpb[,c(2,3)],
+                pure_victims= sumpv[,c(2,3)],
+                repeated_bullies= sumrb[,c(2,3)])
+write.table(table2, "table2imp.csv",sep = ",")
 
 
 

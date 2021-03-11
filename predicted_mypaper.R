@@ -13,7 +13,9 @@ or.prev <- function(testdata= dataset_sec_yr_testing, traindata=dataset,dep_var=
 
 
 ### require or.prev
-predicted.mypaper <- function(x,testdata= NULL, correct= F, imputation.mis.data=T, seed=123, method=c("glm","svm","lasso","all"),message=T, ...){
+predicted.mypaper <- function(x,testdata= NULL, correct= F, imputation.mis.data=T, seed=123, 
+                              method=c("glm","svm","lasso","randomforest","knn"),OOB=T, k=25, 
+                              message=T, ...){
   
   set.seed(seed)
   
@@ -27,7 +29,8 @@ predicted.mypaper <- function(x,testdata= NULL, correct= F, imputation.mis.data=
   model_GLM=x$model$GLM
   model_SVM <- x$model$SVM
   model_lasso <- x$model$lasso
-  mod.matrix <- x$model$model.matrix
+  model_rf <- x$model$RF
+  
 
   
   
@@ -35,13 +38,14 @@ predicted.mypaper <- function(x,testdata= NULL, correct= F, imputation.mis.data=
   ind_var <- x$ind_var
   
   testdata = testdata[,c(ind_var, dep_var)]
+  testdata_rf <- testdata
   
   
   # below: prepare testdata----------------------------
   
   ##  exclude missing data or imputation
   
-  if(is.null(testdata)){data1=model_GLM$data}else{
+  if(is.null(testdata)){data1=x$data}else{
   var_na <- NULL
   prop.na.v <- NULL
   
@@ -114,6 +118,12 @@ predicted.mypaper <- function(x,testdata= NULL, correct= F, imputation.mis.data=
     predicted_pro_2 <- predicted_svm
   }
   if(method=="lasso"){
+    ind_var_str <- paste(c(as.character(ind_var)
+                           #,must.have.var #"firstrses_standardized"
+    ), collapse = "+ ")
+    fmla <- as.formula( paste( dep_var,"~", ind_var_str))
+    mod.matrix <- model.matrix(fmla, data1)
+    message(fmla)
     predicted_lasso<- predict(model_lasso, newx= mod.matrix ,type="response",s=model_lasso$lambda)
     predicted_lasso <- as.numeric(predicted_lasso)
     predicted_pro_2 <- predicted_lasso
@@ -121,7 +131,34 @@ predicted.mypaper <- function(x,testdata= NULL, correct= F, imputation.mis.data=
   
   
   
-  
+  if(method=="randomforest"){
+    if(is.null(testdata_rf)){
+      
+      if(OOB){
+        message(paste("out-of-bag auc"))
+        predicted_rf <- predict(model, type="prob")
+      }else{
+        message(paste("not out-of-bag but original auc"))
+        predicted_rf <- predict(model, newdata= x$data,
+                                type="prob")
+      
+      }
+      predicted_pro_2 <- predicted_rf
+      
+    }else{
+      message(paste("not out-of-bag but original auc: newdata= "))
+      predicted_rf <- predict(model_rf, newdata= x$data, 
+                              type="prob")
+      predicted_rf <- as.numeric(predicted_rf[,2])
+      predicted_pro_2 <- predicted_rf
+      }
+    
+    }
+  if(method=="knn"){
+    if(is.null(testdata)){testdata=x$data}
+    model <- kknn(x$model$model.formula, train = x$data, test = testdata, k=k)
+  predicted_pro_2 <-  model$prob[,2]
+  }  
 
   
   if(method=="all"){
@@ -131,10 +168,13 @@ predicted.mypaper <- function(x,testdata= NULL, correct= F, imputation.mis.data=
     predicted_svm <- attr(predicted_svm, "probabilities")[,2]
     predicted_lasso<- predict(model_lasso, newx= mod.matrix ,type="response",s=model_lasso$lambda)
     predicted_lasso <- as.numeric(predicted_lasso)
+    predicted_rf <- predict(model_rf, newdata= testdata, type="prob")
+    predicted_rf <- as.numeric(predicted_rf[,2])
     
     predicted <- data.frame(Observed=dep_var_0or1, 
                             Predicted_glm=predicted_glm,
                             Predicted_svm=predicted_svm,
+                            Predicted_rf=predicted_rf,
                             Predicted_lasso=predicted_lasso)
     }else{
            if(correct){
@@ -204,10 +244,10 @@ calibrate.mypaper <- function(x, testdata= NULL, correct= F,method="glm",  HLtes
   
   if(!is.null(testdata)){
     
-    predicted <- predicted.mypaper(x, testdata = testdata, correct=correct, method = method)
+    predicted <- predict.mypaper(x, traindata = x$data, testdata = testdata, correct=correct, method = method)
     print(paste("external validation and calibration of testdata with prevalence correction: model building with ", method))
   }else{
-    predicted <- predicted.mypaper(x, method = method)
+    predicted <- predict.mypaper(x, traindata = x$data, method = method)
     print(paste("internal validation and calibration; model building with ", method))
   }
   
@@ -294,15 +334,16 @@ calibrate.mypaper <- function(x, testdata= NULL, correct= F,method="glm",  HLtes
 }  
 
 
-confusionMatrix.mypaper <- function(x, testdata= NULL,activated=T,  correct= F, cut.off=0.3,imputation.testdata=T, ...)
+confusionMatrix.mypaper <- function(x, testdata= NULL,activated=T,method="glm",  correct= F, cut.off=0.3,imputation.testdata=T, ...)
   {
   predicted <- NULL
   
   if(!is.null(testdata)){
-    predicted <- predicted.mypaper(x, testdata = testdata, correct=correct, imputation.mis.data = imputation.testdata)
+    predicted <- predict.mypaper(x, traindata=x$data, testdata = testdata, method= method, #correct=correct #, imputation.mis.data = imputation.testdata
+                                 )
     print("external validation and calibration of testdata with prevalence correction")
   }else{
-    predicted <- predicted.mypaper(x)
+    predicted <- predict.mypaper(x,traindata=x$data, testdata = x$data, method = method)
     print("internal validation and calibration")
   }
   
@@ -323,16 +364,13 @@ if(x$confusion.matrix|activated){
 
 
 
-suppressMessages()
-
-
 
 
 
 
 
 plot_calibration_c <-   function (data1, cOutcome, predRisk, groups, rangeaxis, plottitle, 
-                                  xlabel, ylabel, filename, fileplot, plottype, span=0.8
+                                  xlabel, ylabel, filename, fileplot, plottype, span=1
                                   
                                   ) 
 {
@@ -346,7 +384,7 @@ plot_calibration_c <-   function (data1, cOutcome, predRisk, groups, rangeaxis, 
     xlabel <- "Predicted Probability"
   }
   if (missing(ylabel)) {
-    ylabel <- "Observed Probability"
+    ylabel <- "Observed/Actual Probability"
   }
   if (missing(rangeaxis)) {
     rangeaxis <- c(0, 1)
@@ -374,171 +412,29 @@ plot_calibration_c <-   function (data1, cOutcome, predRisk, groups, rangeaxis, 
     )
     matres <- as.data.frame(matres)
     matres <- mutate(matres, bias= ifelse(meanpred>meanobs, "overestimated", "underestimated"))
-    matres <- mutate(matres, Type= paste("Grouped observations\n(", groups, " groups)"))
+    matres <- mutate(matres, Type= "Grouped observations")
     #matres[bias] <- factor(matres[,bias], levels = c("overestimated", "underestimated"))
     
     
     
     
-    plotc <-  ggplot(data =matres )+ # geom_smooth(aes(x= meanpred, y=meanobs), span= span)+
+    plotc <-  ggplot(data =matres )+  #geom_smooth(aes(x= meanpred, y=meanobs), span= span)+
       geom_point(aes(x= meanpred, y=meanobs, shape= Type #,col=bias
                     )
                 )+
       xlab(xlabel)+ylab(ylabel) +annotate("segment", x=0, xend = 1, y=0, yend=1)+
-      xlim(c(0,1))+ylim(c(0,1)) + theme_pubr(base_size = 10)+ grids(axis = "xy")
+      xlim(c(0,1))+ylim(c(0,1)) + theme_pubr(base_size = 12)+ grids(axis = "xy")
   }
   
   return(plotc)
   
-}  
+} 
+
+
+
+
+
+
 
 
 #
-
-obs.boot <- sample(x = 1:nrow(dataset_selected_imp), size = nrow(dataset_selected_imp), replace = T)
-in.obs.boot <- 1:nrow(dataset_selected_imp) %in% obs.boot
-notin.obs.boot <-  !in.obs.boot
-notin.traindata <- dataset[notin.obs.boot,]
-
-auc.mypaper <- function(traindata,testdata,  method="glm",x=model1.imp, ...){
-
- 
-  
-  
-  predicted <- predict.mypaper(x, traindata=traindata, testdata = testdata, correct=F, method = method) #%>%filter(!is.na(q5_a)))
-  
-  
-  
-  
-  y <-  predicted$Observed
-  p <- predicted$Predicted
-  
-  data <- cbind(y=y, p=p )
-  
-  
-  
-  
-  
-  roc.test <- roc(data[,"y"], data[,"p"], plot = F)
-  auc.test <- roc.test$auc
-  auc.95CI <- ci.auc(roc.test, method= "delong")
-  auc.95CI <- unclass(auc.95CI)
-  
- 
-  
-  loess.calibrate <- loess(y~p )
-
-  P.calibrate <- predict(loess.calibrate, newdata=p)
-  ICI <- mean(abs(P.calibrate-p))
-  E50 <- median(abs(P.calibrate-p))
-  E90 <- quantile(abs(P.calibrate-p), probs = 0.9)
-  Emax <- max(abs(P.calibrate-p))
-  cal.in <- c(ICI=ICI, E50=E50, E90=E90, Emax=Emax)
-  
-  # discrimiation:AUC and its confidence interval   
-  
-  
-
-  # discrimiation:AUC and its confidence interval   
-  roc.test <- roc(y, p, plot = F)
-  auc.test <- roc.test$auc
-
-  calibration.auc <- c(   cal.in, 
-                          AUC=auc.test, AUC.5CI=auc.95CI[1], AUC.95CI=auc.95CI[3])
-  
-  return(calibration.auc)
-  
-  
-} 
-
-boot.mypaper <- function(data=model3.imp$data, statistic=auc.mypaper, 
-                         R=100,sim="parametric", method=c("glm", "svm", "lasso","all"), 
-                         x=model3.imp,...){
-  method=match.arg(method)
-  
-  message(class(method))
-  a <- boot(data, statistic , R=R, sim = sim, stype = "i", method=method, x=x)
-  
-  b <- as.data.frame(a$t)
-  names(b) <- c("ICI","E50","E90","Emax", "AUC","AUC5%CI","AUC95%CI")
-  original <- a$t0
-  corrected <- apply(b, MARGIN = 2, mean)
-  optimism <- original - corrected
-  l <- cbind.data.frame(original= original, corrected=corrected, optimism=optimism)
-  return(l)
-}
-
-
-
-boot.mypaper <- function(data=model3.imp$data, statistic=auc.mypaper, 
-                         R=100,sim="parametric", method=c("glm", "svm", "lasso","all"), 
-                         x=model3.imp,...){
-  method=match.arg(method)
-  
-  message(class(method))
-  a <- boot(data, statistic , R=R, sim = sim, stype = "i", method=method, x=x)
-  
-  b <- as.data.frame(a$t)
-  names(b) <- c("ICI","E50","E90","Emax", "AUC","AUC5%CI","AUC95%CI")
-  original <- a$t0
-  corrected <- apply(b, MARGIN = 2, mean)
-  optimism <- original - corrected
-  l <- cbind.data.frame(original= original, corrected=corrected, optimism=optimism)
-  return(l)
-}
-
-
-boot2.mypaper <- function(model=model3.imp,data=model3.imp$data, func=auc.mypaper, R=40, method= c("glm", "svm", "lasso","all"))
-{
-  method=match.arg(method)
-  l <- data.frame()
-  original <- auc.mypaper(traindata=data, testdata=data,  method=method,x=model)
-  for(i in 1:R){
-    obs.boot <- sample(x = 1:nrow(data), size = nrow(data), replace = T)
-    in.obs.boot <- 1:nrow(data) %in% obs.boot
-    notin.obs.boot <-  !in.obs.boot
-    notin.traindata <- data[notin.obs.boot,]
-    
-    traindata <- data[obs.boot, ]
-    testdata <- notin.traindata
-    # fit the model on bootstrap sample
-    arg1 <- list( traindata=traindata, testdata=testdata, method=method, x=model)
-    pred <- do.call(func, arg1)
-    #pred <- as.data.frame(pred)
-    
-    # apply model to original data
-      
-      l <- rbind(l,pred)
-      
-  }
-  message(dim(l))
-  
-      colnames(l) <- c("ICI","E50","E90","Emax", "AUC","AUC5%CI","AUC95%CI")
-      
-      corrected <- apply(l, MARGIN = 2, mean)
-    # apply model to bootstrap data
-   # arg1 <- list(model=model, data=data, indices= obs.boot, method=method)
-    #pred <- do.call(func, arg)
-    
-    #prob2 = predict(logit.boot, type='response', data.boot)
-    #pred2 = prediction(prob2, data.boot$credit)
-    #auc2 = performance(pred2,"auc")@y.values[[1]][1]
-    #B[i, 2] = auc2
-
-  optimism= original-corrected
-  
-  calib <- data.frame( original=original,corrected=corrected, optimism=optimism)
-  return(calib)
-}
-
-method=c("glm", "svm", "lasso")
-R=2000
-data= dataset_selected_imp
-
-bootval.mod1.glm <- boot2.mypaper(model=model1.imp,data, func = auc.mypaper, R=R, method = "glm")
-bootval.mod1.svm <- boot2.mypaper(model=model1.imp,data, func = auc.mypaper, R=R, method = "svm")
-bootval.mod1.lasso <- boot2.mypaper(model=model1.imp,data, func = auc.mypaper, R=R, method = "lasso")
-
-bootval.mod3.glm <- boot2.mypaper(model=model3.imp,data, func = auc.mypaper, R=R, method = "glm")
-bootval.mod3.svm <- boot2.mypaper(model=model3.imp,data, func = auc.mypaper, R=R, method = "svm")
-bootval.mod3.lasso <- boot2.mypaper(model=model3.imp,data, func = auc.mypaper, R=R, method = "lasso")

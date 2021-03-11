@@ -9,8 +9,8 @@ creat_adj_OR.mypaper <- function(x,...
   
   model_summary <-  summary(glm_model)
   
-  vif_model <- vif(glm_model)
-  
+  vif_model <- rms::vif(glm_model)
+   
   a <- exp(coef(glm_model))
   b <- exp(confint(glm_model))
   
@@ -21,22 +21,25 @@ creat_adj_OR.mypaper <- function(x,...
                               ifelse(model_summary$coefficients[,4]<0.01, "**",  
                                      ifelse(model_summary$coefficients[,4]<0.05,
                                             "*", ifelse(model_summary$coefficients[,4]<0.1,"+","")
-                                            
+                                            )
                                      )
                               )
                        )
-  )
-  )
+             )
   a <- cbind(rownames(a),as.data.frame(a) #,c("firstyrbully2")
-  )
+             )
   a <- a[c(-1),c(-2,-3,-4)]
+ 
   a <- data.frame(a,row.names = NULL)
+  
   colnames(a) <- c("Var_level","adjusted OR(CI)"
                    #,"dep_var"
   )
+
   a <- cbind(a, VIF = round(vif_model, digits = 2
                             )
              )
+  
   
   return(a)
   

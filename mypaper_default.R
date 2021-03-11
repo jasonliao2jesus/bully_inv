@@ -6,7 +6,16 @@ library(ggpubr)
 library("pROC")
 library(caret)
 library(mice)
+library(glmnet)
+library(e1071)
+library(randomForest)
+library(kknn)
+library(mgcv)
+library(rms)
+library(Information)
 
+# dependent variables should not be ordered.
+ model1.imp$data$
 
 sourced_files <- c("model_mypaper.R", "plot_mypaper.R","predicted_mypaper.R","creat_unadj_OR_df.R", "creat_adj_OR_mypaper.R")
 
@@ -28,8 +37,19 @@ mypaper.default<- function(ind_var, dep_var="firstyrbully2",additional_var=NULL,
                          validate.boot40= T, val.B=40, confusion.matrix= T, cut.off=0.5,
                          p.threshhold= 0.05, correct= F )
 {
-
-data = data[,c(ind_var, dep_var, additional_var)]
+# 檢查挑選變數是否存在於data
+  allvars <- c(ind_var, dep_var, additional_var)
+  
+  existvars <-   allvars %in% colnames(data)
+  absentvars <- !existvars 
+  if( any(absentvars)
+  ){
+    
+    stop(paste( allvars[absentvars],": absent in data."))
+    
+  }
+  
+data = data[,allvars]
 
 ##  exclude missing data or imputation
 
@@ -77,9 +97,6 @@ if(imputation.mis.data){
 
   
 }
-
-
-
 
 
 mypaper.arg <- list(ind_var=ind_var, dep_var=dep_var, data=data, 

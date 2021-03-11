@@ -14,8 +14,8 @@ if(any(!has)) install.packages(want[!has])
 
 # loaded libraries
  
-
-
+library(tidyr)
+library(forcats)
 library(mice)
 library(oddsratio)
 library(survey)
@@ -44,7 +44,7 @@ input_file <- "1040103 處理第一及第二年(n=733)(Dr. 黃國洋).sav"
 output_file <- "rearranged_dataset.csv"
 dataset <- read.spss(input_file, to.data.frame= TRUE)
 
-
+read.
 # dependent variables: bullying and victimization: 改切點 
 
 #切點: 一個月二到三次
@@ -186,6 +186,11 @@ dataset$rec_victim_firstyr <- factor(dataset$rec_victim_firstyr, levels= c("no",
 dataset$rec_victim_physical <- factor(dataset$rec_victim_physical, levels= c("no", "yes"))
 dataset$rec_victim_verbal <- factor(dataset$rec_victim_verbal, levels= c("no", "yes"))
 dataset$rec_victim_relational <- factor(dataset$rec_victim_relational, levels= c("no", "yes"))
+dataset<- mutate(dataset, victim_3group_rel= ifelse(rec_victim_relational=="yes","v2_repeated_being_bullied",
+                                                           ifelse(relationalvictim=="有", "v1_1or2_times","v0_not_being_bullied")
+                                                    )
+                 ) 
+dataset$victim_3group_rel <- factor(dataset$victim_3group_rel, levels=c( "v0_not_being_bullied", "v1_1or2_times", "v2_repeated_being_bullied"))
 
 
 
@@ -222,7 +227,7 @@ dataset <- mutate(dataset, bully_3group=ifelse(bully_group=="group3"|bully_group
 dataset<- mutate(dataset, firstyr_bully2_act= ifelse(q115_8_a_factor1== "yes"|q115_9_a_factor1== "yes"|q115_10_a_factor1=="yes" 
           , "yes","no")) 
 
-dataset$firstyr_bully2_act<- factor(dataset$firstyr_bully2_act, levels= c("no", "yes"), ordered = T)
+dataset$firstyr_bully2_act<- factor(dataset$firstyr_bully2_act, levels= c("no", "yes"))
 
 
 dataset<- mutate(dataset, bully_group_act= ifelse(q115_8_a_factor4== "yes"| q115_9_a_factor4== "yes"|q115_10_a_factor4=="yes" 
@@ -534,6 +539,25 @@ dataset<- mutate(dataset, rec_bully_1or0= ifelse(rec_bully_firstyr=="yes", 1,0))
 dataset <- mutate(dataset, rec_bully_act_1or0=ifelse(rec_bully_firstyr_act=="yes", 1,0))
 # create real age
 dataset <-mutate(dataset, yr= 100.7- (q2y_a+(q2m_a)/12))
+
+
+
+vars_vector_victim<-c("victim_3group","q3_a","school_PR","q8_a","q7_a","q6_a","q5_a",#"q5.a",
+                      "q68_a","PHQ9_1yr_new","AUDIT_C_4_a",
+                      "q22_0_a", "firstrses_standardized","bis1_standardized")
+vars_vector_victim_act<-c("victim_3group_act","q3_a","school_PR","q8_a","q7_a","q6_a","q5_a",#"q5.a",
+                          "q68_a","PHQ9_1yr_new","AUDIT_C_4_a",
+                          "q22_0_a", "firstrses_standardized","bis1_standardized")
+vars_vector<-c("q3_a","school_PR","q8_a","q7_a","q6_a","q5_a", #"q5.a",
+               "q68_a","PHQ9_1yr_new","AUDIT_C_4_a",
+               "q22_0_a", "firstrses_standardized","bis1_standardized")
+add_vector <- c("bully_3group", "bully_3group_act", "firstyrbully2", "firstyr_bully2_act", "rec_bully_firstyr",
+                "relationalb_3group", "physicalb_3group", "verbalb_3group")
+
+ref_levels <- c("v0_not_being_bullied", "女", "PR<70","是", "否","有","有","否","0-5","<4")
+
+
+
 # 一次改所有的次dataset
 dataset_table2<-dataset%>%filter(firstyrpurev=="無")
 dataset_table3<-dataset%>%filter(firstyr_pureb=="no")
@@ -554,6 +578,8 @@ selected_variables <- c("firstyrbully2","victim_3group", "firstyrbully_1or0", "b
                         "firstyrvic2","rec_victim_firstyr",
                         "rec_bully_firstyr","rec_bully_firstyr_act", "physicalbully", "verbalbully", "relationalbully", "otherbully",
                         "victim_3group_act", 
+                        "bully_3group_act",
+                        "physicalb_3group", "verbalb_3group", "relationalb_3group",
                         "physicalvictim", "verbalvictim", "relationalvictim", 
                         "firstyr_bully2_act", 'firstyrpurev','firstyr_pureb','firstyrpureb','firstyrpureb','firstyr_bully2','firstyrpurev','firstyrpureb',
                         

@@ -4,14 +4,14 @@ source("cat_var_bar.R")
 cat_var_bar()
 #
 model0 <- model1.imp
-pred1 <- predicted.mypaper(model1.imp)
-pred2 <- predicted.mypaper(model2.imp)
-pred3 <- predicted.mypaper(model3.imp)
+pred1 <- predicted.mypaper(model1.s)
+pred2 <- predicted.mypaper(model2.s)
+pred3 <- predicted.mypaper(model3.s)
 
 #
 
-data.pred <- model0$data
-data0 <- cbind(data.pred,  predicted_pro_2 = pred1$Predicted, predicted_pro_21=pred3$Predicted, predicted_pro_rec= pred2$Predicted)
+
+data0 <- cbind(dataset_selected,  predicted_pro_2 = pred1$Predicted, predicted_pro_21=pred3$Predicted, predicted_pro_rec= pred2$Predicted)
 
 k <- cat_var_bar(dep_var = "bully_3group", dep_var_name = "Bullying Perpetration", 
             dep_var_level = c("Never", "1 or 2 times", "Frequent"), ind_var = "victim_3group")
@@ -35,10 +35,10 @@ bully= "bully_3group_act"
             rug = TRUE,alpha=0.3, col=bully,
            # facet.by = facet_var,
             panel.labs =list( q3_a= c("Female", "Male")),
-            fill=bully,xlab = "Predicted Probability of Bullying Perpetration",
+            fill=bully,xlab = "Predicted probability of any active bullying",
             ylab = "Relative Proportion",
             
-            #palette = grab_legend(q3_a_bully), 
+            palette = grab_legend(q3_a_bully), 
             position="fill")
 
   
@@ -104,13 +104,7 @@ bully= "bully_3group_act"
     ),label.y = 1.05, legend = "right", common.legend = F, nrow = 4
   )
   
-  fig_1 <-  ggarrange(
-     model_density,plot3,plot2, plot1,
-    labels = c(
-      "A", "B","C","D"
-    ),label.y = 1.05, legend = "right", common.legend = F, nrow = 4
-  )    
-  
+
 #############################  
   #Fig S4
   data0= data1 

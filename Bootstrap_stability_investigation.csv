@@ -1,0 +1,40 @@
+,"Global model, model selected by backward elimination with AIC selection, and bootstrap-derived statistics of model stability",,,,,,,,,,,,,,,,
+Table,,Global model,,,Selected model,,,,,,,,,,,,
+,Predictors,Estimate,Standard error,Bootstrap inclusion frequency,Estimate,Standard error,Bootstrap median,Bootstrap 2.5th percentile,Bootstrap 97.5th percentile,RMSD ratio,,,,,,,
+1,(Intercept),-1.801 ,0.683 ,100%,-2.026 ,0.163 ,-2.227 ,-3.033 ,-0.280 ,1.100 ,,,,,,,
+2,Victimization: 1 or 2 times ,1.867 ,0.214 ,100%,1.836 ,0.212 ,1.882 ,1.467 ,2.325 ,1.021,,,,,,,
+3,Victimization: Frequent,2.075 ,0.349 ,100%,2.110 ,0.336 ,2.147 ,1.467 ,2.879 ,1.035,,,,,,,
+4,"BIS-11, standardized",0.494 ,0.111 ,99%,0.502 ,0.104 ,0.502 ,0.276 ,0.741 ,1.136 ,,,,,,,
+5,Father's unemployment,0.810 ,0.320 ,63%,0.877 ,0.305 ,0.851 ,0.000 ,1.485 ,1.748 ,,,,,,,
+6,AUDIT-C¡Ù 4 ,1.034 ,0.436 ,50%,NA,NA,0.752,0,1.907 ,1.820 ,,,,,,,
+7,Male ,0.404 ,0.213 ,35%,NA,NA,0,0,0.861 ,1.704 ,,,,,,,
+8,"RSES , standardized",0.269 ,0.122 ,33%,NA,NA,0,0,0.491 ,1.889 ,,,,,,,
+9,School Rank: PR< 70,0.372 ,0.211 ,29%,NA,NA,0,0,0.784 ,1.622 ,,,,,,,
+10,PHQ-9 = 6-10,0.412 ,0.238 ,22%,NA,NA,0,0,0.832 ,1.633 ,,,,,,,
+11,PHQ-9 = 11-15,0.547 ,0.396 ,22%,NA,NA,0,0,1.254 ,1.364 ,,,,,,,
+12,PHQ-9 > 15,0.304 ,0.481 ,22%,NA,NA,0,-0.499,1.318 ,0.922 ,,,,,,,
+13,MDSS ,-0.042 ,0.029 ,18%,NA,NA,0,-0.095,0,1.432 ,,,,,,,
+14,Not residing with parents,0.271 ,0.312 ,15%,NA,NA,0,0,1.014,1.118 ,,,,,,,
+15,Needy family ,-0.428 ,0.312 ,14%,NA,NA,0,-1.029,0,1.410 ,,,,,,,
+16,Smoking habit,0.261 ,0.488 ,13%,NA,NA,0,0,1.628,1.003 ,,,,,,,
+17,Mother's uemployment,0.019 ,0.227 ,4%,NA,NA,0,0,0,0.499,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,Global model,,,Model 1,,,,,,,Selected model,,,,,
+,Predictors,Estimate,Standard error,Bootstrap inclusion frequency,Estimate,Standard error,Bootstrap median,Bootstrap 2.5th percentile,Bootstrap 97.5th percentile,RMSD ratio,Bootstrap inclusion frequency,Estimate,Standard error,Bootstrap median,Bootstrap 2.5th percentile,Bootstrap 97.5th percentile,RMSD ratio
+1,(Intercept),-1.801 ,0.683 ,100%,-1.975 ,0.666 ,-1.959 ,-3.149 ,-0.712 ,0.966 ,1.000 ,-2.026 ,0.163 ,-2.227 ,-3.033 ,-0.280 ,1.100 
+2,Victimization: 1 or 2 times ,1.867 ,0.214 ,100%,1.869 ,0.212 ,1.916 ,1.490 ,2.351 ,1.077 ,1.000 ,1.836 ,0.212 ,1.882 ,1.467 ,2.325 ,1.021 
+3,Victimization: Frequent,2.075 ,0.349 ,100%,1.975 ,0.342 ,2.068 ,1.374 ,2.825 ,1.054 ,1.000 ,2.110 ,0.336 ,2.147 ,1.467 ,2.879 ,1.035 
+4,"BIS-11, standardized",0.494 ,0.111 ,100%,0.441 ,0.108 ,0.446 ,0.241 ,0.688 ,1.102 ,0.990 ,0.502 ,0.104 ,0.502 ,0.276 ,0.741 ,1.136 
+5,AUDIT-C¡Ù 4 ,1.034,0.436,97%,0.946 ,0.426 ,0.965 ,0,1.913,1.086,50%,NA,NA,0.752,0,1.907,1.820 
+6,MDSS ,-0.042 ,0.029 ,94%,-0.029 ,0.028 ,-0.030 ,-0.085 ,0.016 ,0.996 ,18%,NA,NA,0,-0.095,0,1.432
+7,PHQ-9 = 6-10,0.412 ,0.238 ,94%,0.245 ,0.226 ,0.243 ,-0.195 ,0.699 ,1.196 ,22%,NA,NA,0,0,0.832,1.633
+8,PHQ-9 = 11-15,0.547 ,0.396 ,94%,0.330 ,0.383 ,0.326 ,-0.450 ,1.095 ,1.148 ,22%,NA,NA,0,0,1.254,1.364
+9,PHQ-9 > 15,0.304 ,0.481 ,94%,-0.075 ,0.447 ,-0.004 ,-1.058 ,0.877 ,1.253 ,22%,NA,NA,0,-0.499,1.318,0.922
+10,School Rank: PR< 70,0.372 ,0.211 ,90%,0.332 ,0.207 ,0.310 ,0,0.752,1.038,29%,NA,NA,0,0,0.784,1.622
+11,Father's unemployment,0.810 ,0.320 ,81%,0.836 ,0.303 ,0.802 ,0,1.423,1.365,63%,0.877,0.305,0.851,0,1.485,1.748
+12,Smoking habit,0.261 ,0.488 ,70%,0.310 ,0.485 ,0.320 ,-0.202,1.447,1.014,13%,NA,NA,0,0,1.628,1.003
+13,Male ,0.404 ,0.213 ,70%,0.445 ,0.209 ,0.439 ,0,0.899,1.399,35%,NA,NA,0,0,0.861,1.704
+14,Not residing with parents,0.271 ,0.312 ,36%,NA,NA,0,0,0.975,1.052,15%,NA,NA,0,0,1.014,1.118
+15,Mother's uemployment,0.019 ,0.227 ,21%,NA,NA,0,-0.460 ,0,0.687,4%,NA,NA,0,0,0,0.499
+16,"RSES , standardized",0.269 ,0.122 ,13%,NA,NA,0,0,0.241,2.113,33%,NA,NA,0,0,0.491,1.889
+17,Needy family ,-0.428,0.312,3%,NA,NA,0,-0.018,0,1.421,14%,NA,NA,0,-1.029,0,1.410 

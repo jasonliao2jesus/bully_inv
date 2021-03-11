@@ -1,87 +1,49 @@
 library(Information)
+source("level_factor_lists.R")
+
 
 # weight of evidence analysis
-selected_variables <- c("firstyrbully2", "victim_3group", 
-                        "AUDIT_C_4_a", "q31_0_a", "q22_0_a", 
-                        "firstrses", 
-                        "bis1_total"#,"bis1_lack_of_selfcontrol", 
-                        #"bis1_novelty_seeking", "bis1_inability_to_plan"
-)
+
+#model2
 
 
-dataset_selected_num <- dataset[,c("q3_a","school_PR", "q5_a",
-                                   "q6_a","q7_a","q8_a","q68_a","PHQ9_1yr_new",
-                                   "AUDIT_C_4_a", selected_variables
-                                   )]
-
-k <- as.data.frame(c("q3_a","school_PR", "q5_a",
-             "q6_a","q7_a","q8_a","q68_a","PHQ9_1yr_new",
-             "AUDIT_C_4_a", selected_variables
-))
-
-
-
-
-dataset_selected_num<- mutate(dataset_selected_num, firstyrbully2_1= ifelse(firstyrbully2=="Τ", 1,0))
-
-woe_bully<-create_infotables(data=dataset_selected_num, y="firstyrbully2_1", bins = 6)
-
-
-woe_plot1<- plot_infotables(woe_bully, variables = woe_bully$Summary$Variable[1],same_scales = TRUE)+
-  geom_text(x=1, y=1 , label=c(paste0( "IV=",round( woe_bully$Summary[,2][1], digits = 2)
-  )
-  )
-  )+
-  ggtitle("Frequency of Victimization")
-
-woe_plot2<- plot_infotables(woe_bully, variables = woe_bully$Summary$Variable[2],same_scales = TRUE)+
-  geom_text(x=2, y=0.6 , label=c(paste0( "IV=",round( woe_bully$Summary[,2][2], digits = 2))))+
-  ggtitle("Impulsivity(BIS)")
-
-woe_plot3<- plot_infotables(woe_bully, variables = woe_bully$Summary$Variable[3],same_scales = TRUE)+
-  geom_text(x=2, y=0.25 , label=c(paste0( "IV=",round( woe_bully$Summary[,2][3], digits = 2) )  )  )+
-  ggtitle("Depression(PHQ9)")
-woe_plot4<- plot_infotables(woe_bully, variables = woe_bully$Summary$Variable[4],same_scales = TRUE)+
-  geom_text(x=4, y=0.3 , label=c(paste0( "IV=",round( woe_bully$Summary[,2][4], digits = 2))  )  )+
-  ggtitle("Social Support(MDSS)")
-woe_plot5<- plot_infotables(woe_bully, variables = woe_bully$Summary$Variable[5],same_scales = TRUE)+
-  geom_text(x=1, y=1 , label=c(paste0( "IV=",round( woe_bully$Summary[,2][5], digits = 2)  )  )  )+
-  ggtitle("Alcohol Use(AUDIT-C)")
-
-woe_plot6<- plot_infotables(woe_bully, variables = woe_bully$Summary$Variable[6],same_scales = TRUE)+
-  geom_text(x=3.5, y=0.2 , label=c(paste0( "IV=",round( woe_bully$Summary[,2][6], digits = 2)  )  )  )+
-  ggtitle("Self-esteem(RSES)")
-
-fig_s3 <-  ggarrange(
-  woe_plot1, woe_plot2, woe_plot3,woe_plot4,woe_plot5,woe_plot6,
-  labels = c(
-    "A", "B", "C","D","E","F"
-  ), legend = "right", common.legend = TRUE
-)
-
-
-fig_s3_revised <- annotate_figure(
-  fig_s3, 
-  top = text_grob( "\n  The Weight of Evidence(WOE) and Information Value(IV) on Bullying Perpetration", 
-                   face = "plain", size = 13, hjust=0.7067, vjust = 0.27),
-  bottom = text_grob(paste("Other Variable's IV: Sex: 0.043,School PR: 0.072, Father's Unemployment: 0.058,", 
-                           "Mother's Unemployment: 0.019, Needy Family: 0.001, Living with Parents: 0.014,",
-                           "Smoking Status: 0.04",sep="\n"),just = "left"),
-  
-  fig.lab = "Figure S3", fig.lab.face = "bold", 
-  fig.lab.size = 13, fig.lab.pos= "top.left"
-)
-
-
-## model 3 test, 
 vars_vector_victim<-c("victim_3group","q3_a","school_PR","q8_a","q7_a","q6_a","q5_a",#"q5.a",
                       "q68_a","PHQ9_1yr_new","AUDIT_C_4_a",
                       "q22_0_a", "firstrses","bis1_total")
+
+
 vars_names <- c("Victimization", "Gender", "School PR", "Liviing with Parents", "Needy family", "Mother's employment","Father's employment",
                 "Smoking habit","PHQ-9", "AUDIT-C", "MDSS", "RSES", "Impulsivity")
+
+
+names(vars_names) <- vars_vector_victim
+
+
 names(vars_vector_victim) <- vars_names
 names(vars_names) <- vars_vector_victim
-names.ls <-list( victim_3group_act=c("Never", "1 or 2 times", "Frequent"), 
+names.ls <-list( victim_3group=c("Never", "Once or twice", "Moderate"), 
+                 q3_a=c( "Female","Male"), 
+                 school_PR=c("PR70-89", "PR<70"),
+                 q8_a= c("No","Yes"),
+                 q7_a= c("No","Yes"),
+                 q6_a= c("Yes","No"),
+                 q5_a= c("Yes","No"),#"q5.a",
+                 q68_a= c("Yes","No"),
+                 PHQ9_1yr_new= c("0-5","6-10","11-14",">15") ,AUDIT_C_4_a= c("<4",">=4")
+                 ) 
+
+
+## model 3 test, 
+vars_vector_victim_act<-c("victim_3group","victim_3group_act","victim_3group_rel", "q3_a","school_PR","q8_a","q7_a","q6_a","q5_a",#"q5.a",
+                          "q68_a","PHQ9_1yr_new","AUDIT_C_4_a",
+                          "q22_0_a", "firstrses","bis1_total")
+vars_names <- c("Victimization","Active Victimization","Relational victimization", "Gender", "School PR", "Liviing with Parents", "Needy family", "Mother's employment","Father's employment",
+                "Smoking habit","PHQ-9", "AUDIT-C", "MDSS", "RSES", "Impulsivity")
+names(vars_vector_victim_act) <- vars_names
+names(vars_names) <- vars_vector_victim_act
+names.ls <-list( victim_3group= c("Never", "Once or twice", "Moderate"),
+                victim_3group_act=c("Never", "Once or twice", "Moderate"),
+                 victim_3group_rel=c("Never", "Once or twice", "Moderate"),
                  q3_a=c( "Female","Male"), 
                  school_PR=c("PR70-89", "PR<70"),
                  q8_a= c("No","Yes"),
@@ -91,25 +53,27 @@ names.ls <-list( victim_3group_act=c("Never", "1 or 2 times", "Frequent"),
                  q68_a= c("Yes","No"),
                  PHQ9_1yr_new= c("0-5","6-10","11-14",">15"),
                  AUDIT_C_4_a= c("<4",">=4")) 
+var.ls <- list( victim_3group_act=c("Never", "Once or twice", "Moderate"), 
+                q3_a=c( "Female","Male"), 
+                school_PR=c("PR70-89", "PR<70"),
+                q8_a= c("No","Yes"),
+                q7_a= c("No","Yes"),
+                q6_a= c("Yes","No"),
+                q5_a= c("Yes","No"),#"q5.a",
+                q68_a= c("Yes","No"),
+                PHQ9_1yr_new= c("0-5","6-10","11-14",">15"),
+                AUDIT_C_4_a= c("<4",">=4")) 
 
 
-firstyrbully21_arg <-list(ind_var=vars_vector_victim, dep_var = "firstyr_bully2",  data=dataset,  # additional_var ㄤ跑计
-                          imputation.mis.data=F,
-                          span=0.8, group=12,
-                          validate.boot40= F, 
-                          val.B=10, 
-                          confusion.matrix= F,
-                          cut.off=0.5,
-                          p.threshhold= 0.05, 
-                          correct= F)
 
-model1.test <- do.call(mypaper, firstyrbully21_arg)
+
+
 
 
 ## 礶WOE plot
 
 
-plotwoe.mypaper <- function(x, names.list= names.ls, variable_names=vars_names, ...){  
+plotwoe.mypaper <- function(x, names.list= names.ls, variable_names=vars_names,size=7,k=1,titles="A2", ...){  
 
 
 pred1.test <- predicted.mypaper(x)
@@ -122,7 +86,7 @@ levels.list <- levels.ls(x$ind_var, data = x$data,level.names.list = names.list,
 
 
 
-factor_variable_names <<- levels.list[["factor_variable_names"]]
+factor_variable_names <- levels.list[["factor_variable_names"]]
 numeric_variable_names <- levels.list[["numeric_variable_names"]]
 
 WOE_all <- NULL
@@ -141,6 +105,7 @@ ylim <- c( min(woe.test$Summary$IV)-2, max(woe.test$Summary$IV)+0.5)
 ind_var <- woe.test$Summary$Variable    # extract independent variables(ordered by information value) from "create_infotables" object
 ind_var <- ind_var[ind_var %in% x$ind_var] #  remove variables other than selected independent variables
 message(ind_var)
+titles <-  paste(titles, 1:length( ind_var ), sep = ".")
 
 l <- list()
 
@@ -197,21 +162,26 @@ for(i in ind_var){
                                  print(k) ,
                                  "for factor",i,"?", sep = " ")
           level_name <- readline(prompt = prompt_levels)
-          levels_name <- c(levels_name, ifelse(level_name=="",k,level_name) )  
+          levels_name <- c(levels_name, ifelse(level_name=="",k,level_name) )
+           
         }
         message(levels_name)
-        names(levels.list[[i]]) <- levels_name
+        names(levels.list[[i]]) <-  levels_name
+          
       }
       
     
     
    woeplot <- ggplot(data=data.woe)+geom_col(aes(x= xvar, y=WOE))+
-      ylim(ylim[1], ylim[2])+  
-      scale_x_discrete("", labels= names(levels.list[[i]])
+      ylim(ylim[1], ylim[2]+1.5)+  xlab(factor_variable_names[i])+
+     scale_x_discrete( labels= names(levels.list[[i]])
                        )+
-      ggtitle(factor_variable_names[i])+
-      geom_text(x=1, y= ylim[2]-0.3 , label=c(paste0( "IV=",round( chosen_var_IV, digits = 2)  )  )  )+
-      theme_pubr(base_size = 10)
+     ggtitle(titles[match(i, ind_var)])+
+      geom_text(x=1.1, y= ylim[2]-0.3 , label=c(paste0( "IV=",round( chosen_var_IV, digits = 2)  )  ), size=size/3 )+ 
+      theme_pubr(base_size = size)+
+     theme(#text = element_text(size=size),
+           axis.text.x = element_text(size = size/(1.4*k))
+     )
      # check the level names of categorical factors. 
    
   }else{
@@ -226,10 +196,17 @@ for(i in ind_var){
     }
     
     woeplot <- ggplot(data=data.woe)+geom_col(aes(x= xvar, y=WOE))+
-      ylim(ylim[1], ylim[2])+xlab(NULL)+
-      geom_text(x=1.4, y=ylim[2]-0.3 , label=c(paste0( "IV=",round( chosen_var_IV, digits = 2)  )  )  )+
-      ggtitle(numeric_variable_names[i])+
-      theme_pubr(base_size = 10)
+      ylim(ylim[1], ylim[2])+xlab(numeric_variable_names[i])+
+ #     scale_x_discrete(size=size/3
+#                         )+
+      geom_text(x=1.4, y=ylim[2]-0.3 , label=c(paste0( "IV=",round( chosen_var_IV, digits = 2)  )  ), size=size/3 )+
+      theme_pubr(base_size = size)+
+      ggtitle(titles[match(i, ind_var)])+
+      theme(#text = element_text(size=size)
+        
+        axis.text.x = element_text(size = size/(1.48*k))
+      )
+      
     
    } 
 
@@ -243,9 +220,10 @@ for(i in ind_var){
 
 
 
-l <- plotwoe.mypaper(model3.imp)
+l <- plotwoe.mypaper(model1.woe,size = 9, k=0.9, titles = "1B")
+l3 <- plotwoe.mypaper(model3.woe,size = 9, k=0.9, titles = "1B")
 
-ggarrange_arg <- list(l)
+
 
 
 
@@ -253,12 +231,15 @@ ggarrange_arg <- list(l)
 
 vars_vector_victim_act<-c("victim_3group_act","q3_a","school_PR","q8_a","q7_a","q6_a","q5_a",#"q5.a",
                       "q68_a","PHQ9_1yr_new","AUDIT_C_4_a",
-                      "q22_0_a", "firstrses_standardized","bis1_standardized")
+                      "q22_0_a", "firstrses","bis1_total")
+
 vars_names <- c("Victimization", "Gender", "School PR", "Liviing with Parents", "Needy family", "Mother's employment","Father's employment",
             "Smoking habit","PHQ-9", "AUDIT-C", "MDSS", "RSES", "Impulsivity")
+
 names(vars_names) <- vars_vector_victim_act
-names(vars_vector_victim) <- vars_names
-names.ls <-list( victim_3group_act=c("Never", "1 or 2 times", "Frequent"), 
+
+names(vars_vector_victim_act) <- vars_names
+names.ls <-list( victim_3group=c("Never", "Once or twice", "Moderate"), 
                  q3_a=c( "Female","Male"), 
                  school_PR=c("PR70-89", "PR<70"),
                  q8_a= c("No","Yes"),
@@ -269,8 +250,11 @@ names.ls <-list( victim_3group_act=c("Never", "1 or 2 times", "Frequent"),
                  PHQ9_1yr_new= c("0-5","6-10","11-14",">15"),
                  AUDIT_C_4_a= c("<4",">=4")) 
 
+
+
+
 firstyrbully3_arg <-list(ind_var=vars_vector_victim_act, dep_var = "firstyr_bully2_act",  data=dataset,  # additional_var ㄤ跑计
-                          imputation.mis.data=F,
+                          imputation.mis.data=T,
                           span=0.8, group=12,
                           validate.boot40= F, 
                           val.B=10, 
@@ -282,17 +266,113 @@ firstyrbully3_arg <-list(ind_var=vars_vector_victim_act, dep_var = "firstyr_bull
 model3.test <- do.call(mypaper, firstyrbully3_arg)
 
 
-plotwoe1 <- plotwoe.mypaper(model1)
-plotwoe2 <- plotwoe.mypaper(model2)
-plotwoe3 <- plotwoe.mypaper(model3.test)
+firstyrbully_arg <-list(ind_var=vars_vector_victim_act, dep_var = "firstyrbully2",  data=dataset,  # additional_var ㄤ跑计
+                         imputation.mis.data=T,
+                         span=0.8, group=12,
+                         validate.boot40= F, 
+                         val.B=10, 
+                         confusion.matrix= F,
+                         cut.off=0.5,
+                         p.threshhold= 0.05, 
+                         correct= F)
+
+model1.test <- do.call(mypaper, firstyrbully_arg)
+
+recbully_arg <-list(ind_var=vars_vector_victim_act, dep_var = "rec_bully_firstyr",  data=dataset,  # additional_var ㄤ跑计
+                        imputation.mis.data=T,
+                        span=0.8, group=12,
+                        validate.boot40= F, 
+                        val.B=10, 
+                        confusion.matrix= F,
+                        cut.off=0.5,
+                        p.threshhold= 0.05, 
+                        correct= F)
+
+model2.test <- do.call(mypaper, recbully_arg)
+
+firstyrbullyr_arg <-list(ind_var=vars_vector_victim_act, dep_var = "relationalbully",  data=dataset,  # additional_var ㄤ跑计
+                         imputation.mis.data=T,
+                         span=0.8, group=12,
+                         validate.boot40= F, 
+                         val.B=10, 
+                         confusion.matrix= F,
+                         cut.off=0.5,
+                         p.threshhold= 0.05, 
+                         correct= F)
+
+modelr.test <- do.call(mypaper, firstyrbullyr_arg)
+
+
+firstyrbullyp_arg <-list(ind_var=vars_vector_victim_act, dep_var = "physicalbully",  data=dataset,  # additional_var ㄤ跑计
+                         imputation.mis.data=T,
+                         span=0.8, group=12,
+                         validate.boot40= F, 
+                         val.B=10, 
+                         confusion.matrix= F,
+                         cut.off=0.5,
+                         p.threshhold= 0.05, 
+                         correct= F)
+
+modelp.test <- do.call(mypaper, firstyrbullyp_arg)
+l <- plotwoe.mypaper(modelp.test, titles = "1B")
 
 
 
 
 
 fig_s3 <- ggarrange(
-  l[[1]], l[[2]], l[[3]],l[[4]],l[[5]],l[[6]],l[[7]],l[[8]],l[[9]],l[[10]],l[[11]],l[[12]],l[[13]],
+  l[[1]], l[[2]], l[[3]],l[[4]],l[[5]],l[[6]],l[[7]],l[[8]],l[[9]],l[[10]],l[[11]],l[[12]],
   labels = c(
-    "A", "B", "C","D","E","F","G","H","I","J","K","L","M"
+    "A", "B", "C","D","E","F","G","H","I","J","K","L"
   ), legend = "right", common.legend = TRUE
+)
+
+fig_s3 <- ggarrange(
+  l[[1]], l[[2]], l[[3]],l[[4]],l[[6]],l[[9]],
+  labels = c(
+    "A", "B", "C","D","E","F"
+  ), legend = "right", common.legend = TRUE
+)
+
+fig_s3_revised <- annotate_figure(
+  fig_s3, top = text_grob("                                           ", 
+                         face = "plain", size = 12, hjust=0.45, vjust = 0.27
+  ),
+  fig.lab = "Figure 1: Weight of Analysis (WOE) and Information Value (IV) of Bullying Perpetration", fig.lab.face = "bold", 
+  fig.lab.size = 13, fig.lab.pos= "top.left"
+)
+
+
+fig_1_revised <- fig_s3_revised
+
+
+l <- plotwoe.mypaper(model1.test, titles = "A1")
+F
+
+fig_A1 <- ggarrange(
+  l[[1]], l[[2]], l[[3]],l[[4]],l[[5]],l[[6]],l[[7]],l[[8]],l[[9]],l[[10]],l[[11]],l[[12]],l[[13]],l[[14]],l[[15]],
+   legend = "right", common.legend = TRUE
+)
+
+l <- plotwoe.mypaper(model3.test, titles = "A2")
+F
+fig_A2 <- ggarrange(
+  l[[1]], l[[2]], l[[3]],l[[4]],l[[5]],l[[6]],l[[7]],l[[8]],l[[9]],l[[10]],l[[11]],l[[12]],l[[13]],l[[14]],l[[15]],
+  legend = "right", common.legend = TRUE
+)
+
+
+
+l<- plotwoe.mypaper(modelr.test, titles = "A3")
+F
+fig_A3 <- ggarrange(
+  l[[1]], l[[2]], l[[3]],l[[4]],l[[5]],l[[6]],l[[7]],l[[8]],l[[9]],l[[10]],l[[11]],l[[12]],l[[13]],l[[14]],l[[15]],
+  legend = "right", common.legend = TRUE
+)
+
+l<- plotwoe.mypaper(modelr.test, titles = "A4")
+
+fig_A4 <- ggarrange(
+  l[[1]], l[[2]], l[[3]],l[[4]],l[[5]],l[[6]],l[[7]],l[[8]],l[[9]],l[[10]],l[[11]],l[[12]],l[[13]],l[[14]],l[[15]],
+  legend = "right", common.legend = TRUE
 )

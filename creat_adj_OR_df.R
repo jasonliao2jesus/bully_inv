@@ -65,6 +65,7 @@ creat_adj_OR_df <- function(ind_var=vars_vector,
                               )
                       )
               )
+  
   a <- cbind(rownames(a),as.data.frame(a) #,c("firstyrbully2")
             )
   a <- a[c(-1),c(-2,-3,-4)]
