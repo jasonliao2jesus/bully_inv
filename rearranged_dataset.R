@@ -8,7 +8,7 @@ want <-c( "foreign","caret", "dplyr", "forcats","e1071",
          "lmtest","pscl","survey", "oddsratio", "mice","car","rpart","caret","rlang","esc",
          "lattice","boot","ROCR","pROC", "brglm2", "Metrics","InformationValue", 
          "dominanceanalysis", "shrink", "Information", "ggrepel", "vctrs", "ggpubr", "rms", "PredictABEL",
-         "ggrepel","esc","xlsx","MLeval","kernlab")
+         "ggrepel","esc","xlsx","MLeval","kernlab", "kknn")
 has <- want %in% rownames(installed.packages())
 if(any(!has)) install.packages(want[!has])
 
@@ -37,6 +37,7 @@ library(esc)
 library(ggrepel)
 library(kernlab)
 library(MLeval)
+library(kknn)
 #library(xlsx)
 #dataset$rec
 # 

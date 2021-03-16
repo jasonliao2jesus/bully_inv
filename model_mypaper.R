@@ -14,7 +14,7 @@ model.mypaper <- function(x, traindata=x$data, ind_var=NULL, dep_var=NULL, #glm.
   
   var_df_firsryrbully <- var_univar_analyses(ind_var= ind_var, y=dep_var, data_frame = x$data)
   
-  sig_df <-  var_df_firsryrbully%>%filter(p_value<x$p.threshhold)
+  sig_df <-  var_df_firsryrbully%>%dplyr::filter(p_value<x$p.threshhold)
   sig_var <- sig_df$Var
   sig_var <-unique(sig_var) 
   

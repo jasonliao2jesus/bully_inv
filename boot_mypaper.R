@@ -100,9 +100,9 @@ boot2.mypaper <- function(data = model1.s$data, method=c("glm","lasso", "svm","r
   #B[i, 2] = auc2
   
   if(method=="randomforest"){
-  original <- auc.mypaper(traindata= data,  testdata = NULL,   method=method,x=model, OOB = OOB)
+  original <- auc.mypaper(traindata= NULL,  testdata = NULL,   method=method,x=model, OOB = OOB)
     
-  }else{  original <- auc.mypaper(traindata=data, testdata=data,  method=method,x=model)
+  }else{  original <- auc.mypaper(traindata=NULL, testdata=data,  method=method,x=model)
   }
   
   corrected= original-optimism

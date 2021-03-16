@@ -14,8 +14,8 @@ library(mgcv)
 library(rms)
 library(Information)
 
-# dependent variables should not be ordered.
- model1.imp$data$
+## dependent variables should not be ordered.
+# model1.imp$data$
 
 sourced_files <- c("model_mypaper.R", "plot_mypaper.R","predicted_mypaper.R","creat_unadj_OR_df.R", "creat_adj_OR_mypaper.R")
 
